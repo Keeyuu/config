@@ -7,6 +7,7 @@ packer.startup({
         --------------------- colorschemes --------------------
         -- tokyonight
         use("folke/tokyonight.nvim")
+        use { "catppuccin/nvim", as = "catppuccin" }
         ---other
         -----------------------文件树------------------
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })

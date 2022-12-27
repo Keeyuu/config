@@ -105,7 +105,10 @@ map("n", "<leader>ga", ":HopAnywhere<CR>", opt)
 --outline
 map("n", "<leader>o", ":SymbolsOutline<CR>", opt)
 --replace
---NOTE: 见单独文件
+map("n", "<leader>rf", "<cmd>lua require('spectre').open_file_search()<CR>", opt)
+map("n", "<leader>rp", "<cmd>lua require('spectre').open()<CR>", opt)
+map("n", "<leader>ro", "<cmd>lua require('spectre').show_options()<CR>", opt)
+map("n", "<leader>rR", "<cmd>lua require('spectre.actions').run_replace()<CR>", opt)
 --which-key
 map("n", "<leader>k", ":WhichKey<CR>", opt)
 --welcome

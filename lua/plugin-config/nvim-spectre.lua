@@ -41,7 +41,7 @@ spectre.setup({
             desc = "show option"
         },
         ['run_current_replace'] = {
-            map = "<leader>rcc",
+            map = "<leader>rc",
             cmd = "<cmd>lua require('spectre.actions').run_current_replace()<CR>",
             desc = "replace current line"
         },
