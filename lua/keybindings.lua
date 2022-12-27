@@ -104,6 +104,8 @@ map("n", "<leader>gg", ":HopWord<CR>", opt)
 map("n", "<leader>ga", ":HopAnywhere<CR>", opt)
 --outline
 map("n", "<leader>o", ":SymbolsOutline<CR>", opt)
+--replace
+--NOTE: 见单独文件
 --which-key
 map("n", "<leader>k", ":WhichKey<CR>", opt)
 --welcome

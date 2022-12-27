@@ -74,6 +74,12 @@ packer.startup({
             "folke/todo-comments.nvim",
             requires = "nvim-lua/plenary.nvim",
         }
+        ----------------------spectre------------------
+        use {
+            "windwp/nvim-spectre",
+            requires = "nvim-lua/plenary.nvim"
+        }
+
 
     end,
     config = {
