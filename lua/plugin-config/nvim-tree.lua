@@ -1,3 +1,4 @@
+local vim = vim
 local status, nvim_tree = pcall(require, "nvim-tree")
 if not status then
     vim.notify("没有找到 nvim-tree")
@@ -55,6 +56,6 @@ nvim_tree.setup({
     },
 })
 -- 自动关闭
---vim.cmd([[
---  autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
---]])
+vim.cmd([[
+ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+]])

@@ -19,6 +19,8 @@ require("plugin-config.hop")
 require("plugin-config.surround") -- ysiw" ys$"  ds" cs"' t代表html标签 可以直接干掉标签
 require("plugin-config.symbols-outline")
 require("plugin-config.which-key")
+require("plugin-config.toggleterm")
+-- require("plugin-config.gitsigns") --没什么吊用感觉
 --require("lsp.null-ls") 语言lsp自带的感觉就很好
 
 

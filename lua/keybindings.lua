@@ -49,8 +49,8 @@ map("n", "<C-Up>", ":resize -2<CR>", opt)
 -- 相等比例
 map("n", "s=", "<C-w>=", opt)
 
-map("n", "<leader>t", ":sp | terminal<CR>", opt)
-map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+-- map("n", "<leader>t", ":sp | terminal<CR>", opt)
+-- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
 map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)

@@ -69,7 +69,10 @@ packer.startup({
         }
         ----------------------which-key------------------
         use("folke/which-key.nvim")
-
+        -----------------------gitsigns-----------------
+        use("lewis6991/gitsigns.nvim")
+        ----------------------toggleterm------------------
+        use("akinsho/toggleterm.nvim")
     end,
     config = {
         display = {
