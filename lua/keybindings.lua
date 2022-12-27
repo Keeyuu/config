@@ -100,14 +100,14 @@ map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
 map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 --hop
-map("n","<leader>g",":HopWord<CR>",opt)
-map("n","<leader>gg",":HopAnywhere<CR>",opt)
+map("n", "<leader>gg", ":HopWord<CR>", opt)
+map("n", "<leader>ga", ":HopAnywhere<CR>", opt)
 --outline
-map("n","<leader>o",":SymbolsOutline<CR>",opt)
+map("n", "<leader>o", ":SymbolsOutline<CR>", opt)
 --which-key
-map("n","<leader>k",":WhichKey<CR>",opt)
+map("n", "<leader>k", ":WhichKey<CR>", opt)
 --welcome
-map("n","<leader>w",":Dashboard<CR>",opt)
+map("n", "<leader>w", ":Dashboard<CR>", opt)
 
 pluginKeys.telescopeList = {
     i = {
@@ -130,9 +130,8 @@ pluginKeys.telescopeList = {
 -- nvim-tree
 -- alt + m 键打开关闭tree
 map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
-map("n", "<leader>m", ":NvimTreeToggle<CR>", opt)
---hop
---map("n", "", ":HopWord<CR>", opt)
+--todo
+map("n", "<leader>mm", ":TodoTelescope<CR>", opt)
 --map("n", "", ":HopAnywhere<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {

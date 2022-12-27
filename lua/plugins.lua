@@ -62,10 +62,6 @@ packer.startup({
         use {
             'phaazon/hop.nvim',
             branch = 'v2', -- optional but strongly recommended
-            config = function()
-                -- you can configure Hop the way you like here; see :h hop-config
-                require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-            end
         }
         ----------------------which-key------------------
         use("folke/which-key.nvim")
@@ -73,6 +69,12 @@ packer.startup({
         use("lewis6991/gitsigns.nvim")
         ----------------------toggleterm------------------
         use("akinsho/toggleterm.nvim")
+        ----------------------todo------------------
+        use {
+            "folke/todo-comments.nvim",
+            requires = "nvim-lua/plenary.nvim",
+        }
+
     end,
     config = {
         display = {
