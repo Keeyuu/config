@@ -67,6 +67,8 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 -- 上下滚动浏览
 map("n", "<C-j>", "10j", opt)
 map("n", "<C-k>", "10k", opt)
+map("v", "<C-j>", "10j", opt)
+map("v", "<C-k>", "10k", opt)
 -- 退出
 map("n", "q", ":q<CR>", opt)
 map("n", "qq", ":q!<CR>", opt)
@@ -179,8 +181,8 @@ pluginKeys.comment = {
     },
 }
 -- ctrl + /
-map("n", "<C-/>", "gcc", { noremap = false })
-map("v", "<C-/>", "gcc", { noremap = false })
+map("n", "<C-_>", "gcc", { noremap = false })
+map("v", "<C-_>", "gcc", { noremap = false })
 
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
