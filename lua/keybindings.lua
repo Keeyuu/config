@@ -100,6 +100,13 @@ map("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 --hop
 map("n","<leader>g",":HopWord<CR>",opt)
 map("n","<leader>gg",":HopAnywhere<CR>",opt)
+--outline
+map("n","<leader>o",":SymbolsOutline<CR>",opt)
+--which-key
+map("n","<leader>k",":WhichKey<CR>",opt)
+--welcome
+map("n","<leader>w",":Dashboard<CR>",opt)
+
 pluginKeys.telescopeList = {
     i = {
         -- 上下移动

@@ -17,6 +17,8 @@ require("plugin-config.indent-blankline")
 require("plugin-config.nvim-autopairs")
 require("plugin-config.hop")
 require("plugin-config.surround") -- ysiw" ys$"  ds" cs"' t代表html标签 可以直接干掉标签
+require("plugin-config.symbols-outline")
+require("plugin-config.which-key")
 --require("lsp.null-ls") 语言lsp自带的感觉就很好
 
 

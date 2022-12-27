@@ -1,3 +1,4 @@
+local vim = vim
 local packer = require("packer")
 packer.startup({
     function(use)
@@ -66,6 +67,8 @@ packer.startup({
                 require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
             end
         }
+        ----------------------which-key------------------
+        use("folke/which-key.nvim")
 
     end,
     config = {
