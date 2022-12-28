@@ -26,11 +26,11 @@ map("v", "/", "/\\v", { noremap = true, silent = false })
 map("n", "sc", "<C-w>c", opt)
 -- 关闭其他
 map("n", "so", "<C-w>o", opt)
--- Alt + hjkl  窗口之间跳转
-map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-l>", "<C-w>l", opt)
+-- Ctrl + hjkl  窗口之间跳转 NOTE: A-*
+map("n", "<C-h>", "<C-w>h", opt)
+map("n", "<C-j>", "<C-w>j", opt)
+map("n", "<C-k>", "<C-w>k", opt)
+map("n", "<C-l>", "<C-w>l", opt)
 -- <leader> + hjkl 窗口之间跳转
 map("n", "<leader>h", "<C-w>h", opt)
 map("n", "<leader>j", "<C-w>j", opt)
@@ -50,20 +50,22 @@ map("n", "<C-Up>", ":resize -2<CR>", opt)
 map("n", "s=", "<C-w>=", opt)
 
 -- map("n", "<leader>t", ":sp | terminal<CR>", opt)
--- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
+-- map("n", "<leader>vt", ":vsp | terminal<CR>", opt) NOTE: A-*
 map("t", "<Esc>", "<C-\\><C-n>", opt)
-map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
-map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
-map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
-map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
+map("t", "<C-h>", [[ <C-\><C-N><C-w>h ]], opt)
+map("t", "<C-j>", [[ <C-\><C-N><C-w>j ]], opt)
+map("t", "<C-k>", [[ <C-\><C-N><C-w>k ]], opt)
+map("t", "<C-l>", [[ <C-\><C-N><C-w>l ]], opt)
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
 -- visual模式下缩进代码
-map("v", "<", "<gv", opt)
-map("v", ">", ">gv", opt)
+map("v", "<C-[>", "<gv", opt)
+map("v", "<C-]>", ">gv", opt)
 -- 上下移动选中文本
-map("v", "J", ":move '>+1<CR>gv-gv", opt)
-map("v", "K", ":move '<-2<CR>gv-gv", opt)
+-- map("v", "J", ":move '>+1<CR>gv-gv", opt)
+map("v","<A-j>",":move '>+1<CR>gv-gv",opt)
+-- map("v", "K", ":move '<-2<CR>gv-gv", opt)
+map("v","<A-k>",":move '<-2<CR>gv-gv",opt)
 -- 上下滚动浏览
 map("n", "<C-j>", "10j", opt)
 map("n", "<C-k>", "10k", opt)
@@ -73,21 +75,48 @@ map("v", "<C-k>", "10k", opt)
 map("n", "q", ":q<CR>", opt)
 map("n", "qq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
+
+map("n", "<leader>w", ":w<CR>", opt)
+
 -- bufferline
--- 左右Tab切换
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
--- 关闭
---"moll/vim-bbye"
+map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<A-l>", ":BufferLineCycleNext<CR>", opt)
+
+
+map("n", "<leader>bj", ":BufferLinePick<CR>", opt)
 map("n", "<leader>bw", ":Bdelete!<CR>", opt)
-map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
-map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
-map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
+--map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
+--map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
+map("n", "<leader>bp", ":BufferLinePickClose<CR>", opt)
+vim.keymap.set("n", "<leader>bc", function()
+    vim.cmd("BufferLineCloseRight")
+    vim.cmd("BufferLineCloseLeft")
+end)
+
 -- Telescope
 -- 查找文件
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 -- 全局搜索
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+-- 最近文件
+map("n", "<leader>so", ":Telescope oldfiles<CR>", opt)
+-- 快捷键
+map("n", "<leader>sk", ":Telescope keymaps<CR>", opt)
+-- 命令行
+map("n", "<leader>sc", ":Telescope commands<CR>", opt)
+-- git branch
+map("n", "<leader>sg", ":Telescope git_branches<CR>", opt)
+-- highlights
+local is_highlights = true
+vim.keymap.set("n", "<leader>sh", function()
+    if is_highlights then
+        vim.cmd("set nohlsearch")
+    else
+        vim.cmd("set hlsearch")
+    end
+    is_highlights = not is_highlights
+end)
+
 --lsp
 map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
 map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
@@ -99,6 +128,8 @@ map("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
 map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
 map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+
+-- vim.cmd("autocmd BufWritePre * lua vim.lsp.buf.formatting()")
 --hop
 map("n", "<leader>gg", ":HopWord<CR>", opt)
 map("n", "<leader>ga", ":HopAnywhere<CR>", opt)
@@ -112,7 +143,7 @@ map("n", "<leader>rR", "<cmd>lua require('spectre.actions').run_replace()<CR>", 
 --which-key
 map("n", "<leader>k", ":WhichKey<CR>", opt)
 --welcome
-map("n", "<leader>w", ":Dashboard<CR>", opt)
+map("n", "<leader>;", ":Dashboard<CR>", opt)
 
 pluginKeys.telescopeList = {
     i = {
@@ -134,7 +165,7 @@ pluginKeys.telescopeList = {
 
 -- nvim-tree
 -- alt + m 键打开关闭tree
-map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 --todo
 map("n", "<leader>mm", ":TodoTelescope<CR>", opt)
 --map("n", "", ":HopAnywhere<CR>", opt)
