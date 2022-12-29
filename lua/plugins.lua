@@ -17,7 +17,7 @@ packer.startup({
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
         use("arkav/lualine-lsp-progress")
         ----------------------搜索-------------------
-        use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
+        -- use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
         ----------------------启动页面-------------------
         use("glepnir/dashboard-nvim")
         ----------------------项目-------------------
@@ -44,7 +44,7 @@ packer.startup({
         use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
         use("hrsh7th/cmp-path") -- { name = 'path' }
         use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
-        use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+        use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
         -- 常见编程语言代码段
         use("rafamadriz/friendly-snippets")
         -- ui 补全图标显示
@@ -69,7 +69,7 @@ packer.startup({
         ----------------------which-key------------------
         use("folke/which-key.nvim")
         -----------------------gitsigns-----------------
-        use("lewis6991/gitsigns.nvim")
+        -- use("lewis6991/gitsigns.nvim")
         ----------------------toggleterm------------------
         use("akinsho/toggleterm.nvim")
         ----------------------todo------------------
@@ -89,9 +89,14 @@ packer.startup({
         })
         ----------------------lastplace-----------------
         use 'ethanholz/nvim-lastplace'
-
-        
-
+        ----------------------lazygit-------------------
+        use({
+            "nvim-telescope/telescope.nvim",
+            requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
+            config = function()
+                require("telescope").load_extension("lazygit")
+            end,
+        })
 
     end,
     config = {

@@ -17,6 +17,11 @@ db.custom_center = {
         action = "Telescope projects",
     },
     {
+        icon = "  ",
+        desc = "Open Note                           ",
+        action = "edit ~/note/note.md",
+    },
+    {
         icon = "  ",
         desc = "Recently files                      ",
         action = "Telescope oldfiles",
@@ -32,14 +37,19 @@ db.custom_center = {
         action = "edit ~/.config/nvim/lua/keybindings.lua",
     },
     {
-        icon = "  ",
-        desc = "Edit Projects                       ",
-        action = "edit ~/.local/share/nvim/project_nvim/project_history",
+        icon = "  ",
+        desc = "Edit Zsh                            ",
+        action = "edit ~/.zshrc",
     },
     {
         icon = "  ",
-        desc = "Edit .zshrc                         ",
-        action = "edit ~/.zshrc",
+        desc = "Edit Alacritty                      ",
+        action = "edit ~/.alacritty.yml",
+    },
+    {
+        icon = "  ",
+        desc = "Edit Projects                       ",
+        action = "edit ~/.local/share/nvim/project_nvim/project_history",
     },
 
     --{

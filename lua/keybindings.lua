@@ -175,7 +175,7 @@ pluginKeys.telescopeList = {
 -- alt + m 键打开关闭tree
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt)
 --todo
-map("n", "<leader>mm", ":TodoTelescope<CR>", opt)
+map("n", "<leader>cm", ":TodoTelescope<CR>", opt)
 --map("n", "", ":HopAnywhere<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
