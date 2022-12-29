@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -228,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/ful1e5/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

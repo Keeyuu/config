@@ -26,7 +26,7 @@ map("v", "/", "/\\v", { noremap = true, silent = false })
 map("n", "sc", "<C-w>c", opt)
 -- 关闭其他
 map("n", "so", "<C-w>o", opt)
--- Ctrl + hjkl  窗口之间跳转 NOTE: A-*
+-- Ctrl + hjkl  窗口之间跳转
 map("n", "<C-h>", "<C-w>h", opt)
 map("n", "<C-j>", "<C-w>j", opt)
 map("n", "<C-k>", "<C-w>k", opt)
@@ -50,7 +50,7 @@ map("n", "<C-Up>", ":resize -2<CR>", opt)
 map("n", "s=", "<C-w>=", opt)
 
 -- map("n", "<leader>t", ":sp | terminal<CR>", opt)
--- map("n", "<leader>vt", ":vsp | terminal<CR>", opt) NOTE: A-*
+-- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
 map("t", "<C-h>", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<C-j>", [[ <C-\><C-N><C-w>j ]], opt)
@@ -105,8 +105,6 @@ map("n", "<leader>so", ":Telescope oldfiles<CR>", opt)
 map("n", "<leader>sk", ":Telescope keymaps<CR>", opt)
 -- 命令行
 map("n", "<leader>sc", ":Telescope commands<CR>", opt)
--- git branch
-map("n", "<leader>sg", ":Telescope git_branches<CR>", opt)
 -- highlights
 local is_highlights = true
 vim.keymap.set("n", "<leader>sh", function()
@@ -134,10 +132,19 @@ map("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
 map("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 map("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 
--- vim.cmd("autocmd BufWritePre * lua vim.lsp.buf.formatting()")
 --hop
-map("n", "<leader>gg", ":HopWord<CR>", opt)
-map("n", "<leader>ga", ":HopAnywhere<CR>", opt)
+map("n", "<leader>hh", ":HopWord<CR>", opt)
+map("n", "<leader>ha", ":HopAnywhere<CR>", opt)
+--git NOTE: git 使用说明 https://github.com/sindrets/diffview.nvim
+map("n", "<leader>gl", ":LazyGit<CR>", opt)
+--不带参数为全部文件 带参数为单个文件
+map("n", "<leader>gh", ":DiffviewFileHistory", opt)
+--不带参数对比上一次提交 可以一个参数 也可以两个对比 
+--origin/main..HEAD 中间两个点分割 
+--You can also provide additional paths to narrow down what files are shown:
+-- :DiffviewOpen HEAD~2 -- lua/diffview plugin
+map("n", "<leader>gd", ":DiffviewOpen", opt)
+map("","<leader>gc",":DiffviewClose<CR>",opt)--关闭
 --outline
 map("n", "<leader>o", ":SymbolsOutline<CR>", opt)
 --replace

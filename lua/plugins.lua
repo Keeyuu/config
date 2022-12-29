@@ -8,6 +8,7 @@ packer.startup({
         -- tokyonight
         use("folke/tokyonight.nvim")
         use { "catppuccin/nvim", as = "catppuccin" }
+        use("ful1e5/onedark.nvim")
         ---other
         -----------------------文件树------------------
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
@@ -97,6 +98,8 @@ packer.startup({
                 require("telescope").load_extension("lazygit")
             end,
         })
+        ----------------------diffview------------------
+        use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     end,
     config = {
