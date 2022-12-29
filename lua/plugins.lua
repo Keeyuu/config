@@ -88,6 +88,7 @@ packer.startup({
             "iamcco/markdown-preview.nvim",
             run = function() vim.fn["mkdp#util#install"]() end,
         })
+        use {"ellisonleao/glow.nvim"}
         ----------------------lastplace-----------------
         use 'ethanholz/nvim-lastplace'
         ----------------------lazygit-------------------

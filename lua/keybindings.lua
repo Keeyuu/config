@@ -62,10 +62,10 @@ map("v", "p", '"_dP', opt)
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 -- 上下移动选中文本
-map("v","J",":move '>+1<CR>gv-gv",opt)
-map("v","K",":move '<-2<CR>gv-gv",opt)
-map("v","<Esc>","v",opt)
-map("v","u","",opt)
+map("v", "J", ":move '>+1<CR>gv-gv", opt)
+map("v", "K", ":move '<-2<CR>gv-gv", opt)
+map("v", "<Esc>", "v", opt)
+map("v", "u", "", opt)
 -- 上下滚动浏览
 map("n", "<C-j>", "10j", opt)
 map("n", "<C-k>", "10k", opt)
@@ -139,12 +139,12 @@ map("n", "<leader>ha", ":HopAnywhere<CR>", opt)
 map("n", "<leader>gl", ":LazyGit<CR>", opt)
 --不带参数为全部文件 带参数为单个文件
 map("n", "<leader>gh", ":DiffviewFileHistory", opt)
---不带参数对比上一次提交 可以一个参数 也可以两个对比 
---origin/main..HEAD 中间两个点分割 
+--不带参数对比上一次提交 可以一个参数 也可以两个对比
+--origin/main..HEAD 中间两个点分割
 --You can also provide additional paths to narrow down what files are shown:
 -- :DiffviewOpen HEAD~2 -- lua/diffview plugin
 map("n", "<leader>gd", ":DiffviewOpen", opt)
-map("","<leader>gc",":DiffviewClose<CR>",opt)--关闭
+map("", "<leader>gc", ":DiffviewClose<CR>", opt) --关闭
 --outline
 map("n", "<leader>o", ":SymbolsOutline<CR>", opt)
 --replace
@@ -157,8 +157,29 @@ map("n", "<leader>k", ":WhichKey<CR>", opt)
 --welcome
 map("n", "<leader>;", ":Dashboard<CR>", opt)
 --markdown
-map("n", "<leader>ms",":MarkdownPreview<CR>",opt)
-map("n", "<leader>mc",":MarkdownPreviewStop<CR>",opt)
+local mPreview, mGlow = false, false
+
+-- map("n", "<leader>mp", ":MarkdownPreview<CR>", opt)
+-- map("n", "<leader>mcp", ":MarkdownPreviewStop<CR>", opt)
+-- map("n", "<leader>mg", ":Glow<CR>", opt)
+-- map("n", "<leader>mcg", ":Glow!<CR>", opt)
+vim.keymap.set("n", "<leader>mp", function()
+    if not mPreview then
+        vim.cmd("MarkdownPreview")
+    else
+        vim.cmd("MarkdownPreviewStop")
+    end
+    mPreview = not mPreview
+
+end)
+vim.keymap.set("n", "<leader>mg", function()
+    if not mGlow then
+        vim.cmd("Glow")
+    else
+        vim.cmd("Glow!")
+    end
+    mGlow = not mGlow
+end)
 
 pluginKeys.telescopeList = {
     i = {

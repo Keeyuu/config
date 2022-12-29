@@ -6,20 +6,17 @@ window:
 
   dynamic_padding: true
   decorations: full
-  opacity: 1.0
+  opacity: 0.95
   startup_mode: Maximized
-  history: 10000
-  multiplier: 3
 
 font:
-  # Normal (roman) font face
   normal:
-    # Font family
-    #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
+    #   FiraCode Nerd Font Mono 
+    #   UbuntuMono Nerd Font
     family: "FiraCode Nerd Font Mono"
 
   bold:
@@ -29,46 +26,17 @@ font:
     family: "FiraCode Nerd Font Mono"
   bold_italic:
     family: "FiraCode Nerd Font Mono"
-  size: 16.0
-  AppleFontSmoothing: 0
-colors:
-  # Default colors
-  primary:
-    background: '0x24283b'
-    foreground: '0xc0caf5'
-
-  # Normal colors
-  normal:
-    black:   '0x1D202F'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xa9b1d6'
-
-  # Bright colors
-  bright:
-    black:   '0x414868'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xc0caf5'
-
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
-
+  size: 15.0
 
 
 live_config_reload: true
 key_bindings:
   # macOS Control 就是ommand   Alt == option
   -  { key: F,              mods: Control,            action: ReceiveChar      }
+  -  {key: T, mods: Command, action:  SpawnNewInstance                   }
+  - { key: Up,       mods: Command,      action: ScrollPageUp   }
+  - { key: Down,    mods: Command,      action: ScrollPageDown }
+
   # Alt Meta key 
   - { key: A,         mods: Alt,       chars: "\x1ba"                       }
   - { key: B,         mods: Alt,       chars: "\x1bb"                       }
@@ -151,3 +119,34 @@ key_bindings:
   - { key: Backslash, mods: Alt|Shift, chars: "\x1b|"                       } # Alt + |
   # https://github.com/alacritty/alacritty/issues/315
   - { key: Back,      mods: Alt|Shift, chars: "\x1b\x7f"                    } # Alt + Backspace
+colors:
+  # Default colors
+    primary:
+      background: '0x24283b'
+      foreground: '0xc0caf5'
+
+    # Normal colors
+    normal:
+      black:   '0x1D202F'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xa9b1d6'
+
+    # Bright colors
+    bright:
+      black:   '0x414868'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xc0caf5'
+
+    indexed_colors:
+      - { index: 16, color: '0xff9e64' }
+      - { index: 17, color: '0xdb4b4b' }

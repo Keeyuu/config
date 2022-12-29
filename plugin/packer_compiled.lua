@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["glow.nvim"] = {
+    loaded = true,
+    path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/glow.nvim",
+    url = "https://github.com/ellisonleao/glow.nvim"
+  },
   ["hop.nvim"] = {
     loaded = true,
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/hop.nvim",
