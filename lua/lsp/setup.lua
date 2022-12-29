@@ -25,9 +25,19 @@ require("mason-lspconfig").setup({
         "jsonls",
         "pyright",
         "rust_analyzer",
-        "taplo",
         "yamlls",
+        "taplo",
         "gopls",
+        "cmake",
+        "csharp_ls",
+        "sqls",
+        "vimls",
+        "volar",
+        -- "vuels",
+        "marksman",
+        "clangd",
+        "bufls",
+
     },
 })
 
@@ -45,9 +55,18 @@ local servers = {
     emmet_ls = Default,
     jsonls = Default,
     rust_analyzer = Default,
-    taplo = Default,
     yamlls = Default,
+    taplo = Default,
     gopls = Default,
+    cmake = Default,
+    csharp_ls = Default,
+    sqls = Default,
+    vimls = Default,
+    volar = Default,
+    -- vuels = Default,
+    marksman = Default,
+    clangd = Default,
+    bufls = Default,
     --xxx  = require("lsp.config.xxxx")
 }
 

@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
   ["cmp-vsnip"] = {
     loaded = true,
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
@@ -139,6 +144,11 @@ _G.packer_plugins = {
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -158,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -183,6 +198,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-lastplace"] = {
+    loaded = true,
+    path = "/Users/keeyu/.local/share/nvim/site/pack/packer/start/nvim-lastplace",
+    url = "https://github.com/ethanholz/nvim-lastplace"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

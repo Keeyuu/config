@@ -31,6 +31,7 @@ packer.startup({
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             "neovim/nvim-lspconfig",
+            "ray-x/lsp_signature.nvim" --函数参数提示加强
         }
         ---------------------补全引擎--------------------
         -- 补全引擎
@@ -43,6 +44,7 @@ packer.startup({
         use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
         use("hrsh7th/cmp-path") -- { name = 'path' }
         use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+        use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
         -- 常见编程语言代码段
         use("rafamadriz/friendly-snippets")
         -- ui 补全图标显示
@@ -80,6 +82,15 @@ packer.startup({
             "windwp/nvim-spectre",
             requires = "nvim-lua/plenary.nvim"
         }
+        ----------------------md------------------
+        use({
+            "iamcco/markdown-preview.nvim",
+            run = function() vim.fn["mkdp#util#install"]() end,
+        })
+        ----------------------lastplace-----------------
+        use 'ethanholz/nvim-lastplace'
+
+        
 
 
     end,

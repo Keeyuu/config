@@ -7,7 +7,7 @@ end
 db.custom_footer = {
     "",
     "",
-    "真正的价值，往往源于最微小的瑕疵",
+    "真正的价值，往往源于微小的瑕疵",
 }
 
 db.custom_center = {
@@ -22,6 +22,11 @@ db.custom_center = {
         action = "Telescope oldfiles",
     },
     {
+        icon = "  ",
+        desc = "Find file                           ",
+        action = "Telescope find_files",
+    },
+    {
         icon = "  ",
         desc = "Edit keybindings                    ",
         action = "edit ~/.config/nvim/lua/keybindings.lua",
@@ -32,9 +37,14 @@ db.custom_center = {
         action = "edit ~/.local/share/nvim/project_nvim/project_history",
     },
     {
-        icon = "  ",
-        desc = "Find file                           ",
-        action = "Telescope find_files",
+        icon = "  ",
+        desc = "Edit .zshrc                         ",
+        action = "edit ~/.zshrc",
+    },
+    {
+        icon = "  ",
+        desc = "write note                          ",
+        action = "edit ~/Library/Mobile\\ Documents/com\\~apple\\~CloudDocs/note/doc",
     },
     --{
     --    icon = "  ",

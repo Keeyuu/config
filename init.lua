@@ -13,6 +13,8 @@ require("plugin-config.bufferline")
 require("lsp.setup")
 require("lsp.cmp")
 require("lsp.ui")
+require("lsp.lsp_signature")
+require("lsp.cmp_tabnine")
 require("plugin-config.indent-blankline")
 require("plugin-config.nvim-autopairs")
 require("plugin-config.hop")
@@ -22,7 +24,7 @@ require("plugin-config.which-key")
 require("plugin-config.toggleterm")
 require("plugin-config.todo-comments")
 require("plugin-config.nvim-spectre")
-
+require("plugin-config.nvim-lastplace")
 -- require("plugin-config.gitsigns") --没什么吊用感觉
 --require("lsp.null-ls") 语言lsp自带的感觉就很好
 

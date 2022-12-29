@@ -62,10 +62,10 @@ map("v", "p", '"_dP', opt)
 map("v", "<C-[>", "<gv", opt)
 map("v", "<C-]>", ">gv", opt)
 -- 上下移动选中文本
--- map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v","<A-j>",":move '>+1<CR>gv-gv",opt)
--- map("v", "K", ":move '<-2<CR>gv-gv", opt)
 map("v","<A-k>",":move '<-2<CR>gv-gv",opt)
+map("v","<Esc>","v",opt)
+map("v","u","",opt)
 -- 上下滚动浏览
 map("n", "<C-j>", "10j", opt)
 map("n", "<C-k>", "10k", opt)
@@ -77,6 +77,7 @@ map("n", "qq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
 
 map("n", "<leader>w", ":w<CR>", opt)
+map("n", "<leader>u", ":edit!<CR>", opt)
 
 -- bufferline
 map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
@@ -118,8 +119,12 @@ vim.keymap.set("n", "<leader>sh", function()
 end)
 
 --lsp
+map("n", "<leader>lt", ":CmpTabnineHub<CR>", opt)
+map("n", "<leader>ll", ":CmpTabnineHubUrl<CR>", opt)
+
 map("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
-map("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opt)
+map("n", "<leader>la", "<cmd>Lspsaga code_action<CR>", opt)
+
 map('n', 'gd', '<cmd>Lspsaga preview_definition<CR>', opt)
 map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
 map("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opt)
@@ -144,6 +149,9 @@ map("n", "<leader>rR", "<cmd>lua require('spectre.actions').run_replace()<CR>", 
 map("n", "<leader>k", ":WhichKey<CR>", opt)
 --welcome
 map("n", "<leader>;", ":Dashboard<CR>", opt)
+--markdown
+map("n", "<leader>ms",":MarkdownPreview<CR>",opt)
+map("n", "<leader>mc",":MarkdownPreviewStop<CR>",opt)
 
 pluginKeys.telescopeList = {
     i = {
