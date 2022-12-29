@@ -41,11 +41,7 @@ db.custom_center = {
         desc = "Edit .zshrc                         ",
         action = "edit ~/.zshrc",
     },
-    {
-        icon = "  ",
-        desc = "write note                          ",
-        action = "edit ~/Library/Mobile\\ Documents/com\\~apple\\~CloudDocs/note/doc",
-    },
+
     --{
     --    icon = "  ",
     --    desc = { "Change Theme                           " },

@@ -59,11 +59,11 @@ map("t", "<C-l>", [[ <C-\><C-N><C-w>l ]], opt)
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
 -- visual模式下缩进代码
-map("v", "<C-[>", "<gv", opt)
-map("v", "<C-]>", ">gv", opt)
+map("v", "<", "<gv", opt)
+map("v", ">", ">gv", opt)
 -- 上下移动选中文本
-map("v","<A-j>",":move '>+1<CR>gv-gv",opt)
-map("v","<A-k>",":move '<-2<CR>gv-gv",opt)
+map("v","J",":move '>+1<CR>gv-gv",opt)
+map("v","K",":move '<-2<CR>gv-gv",opt)
 map("v","<Esc>","v",opt)
 map("v","u","",opt)
 -- 上下滚动浏览
