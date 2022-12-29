@@ -8,6 +8,7 @@ if not status_ok then
     return
 end
 
+-- WARN: keybindings
 spectre.setup({
     highlight      = {
         ui = "String",

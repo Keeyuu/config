@@ -4,7 +4,6 @@ local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
 -- 插件快捷键
 local pluginKeys = {}
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -147,7 +146,7 @@ map("n", "<leader>gd", ":DiffviewOpen", opt)
 map("", "<leader>gc", ":DiffviewClose<CR>", opt) --关闭
 --outline
 map("n", "<leader>o", ":SymbolsOutline<CR>", opt)
---replace
+--replace WARN: nvim-spectre 里面也有定义 就这个除外
 map("n", "<leader>rf", "<cmd>lua require('spectre').open_file_search()<CR>", opt)
 map("n", "<leader>rp", "<cmd>lua require('spectre').open()<CR>", opt)
 map("n", "<leader>ro", "<cmd>lua require('spectre').show_options()<CR>", opt)
@@ -313,4 +312,52 @@ pluginKeys.cmp = function(cmp)
         -- end of super Tab
     }
 end
+
+pluginKeys.toggleterm = function(ta, tb, tc)
+    vim.keymap.set({ "n", "t" }, "<leader>tt", function()
+        if ta:is_open() then
+            ta:close()
+            return
+        end
+        ta:open()
+    end)
+
+    vim.keymap.set({ "n", "t" }, "<leader>tv", function()
+        if tb:is_open() then
+            tb:close()
+            return
+        end
+        tb:open()
+    end)
+
+
+    vim.keymap.set({ "n", "t" }, "<leader>th", function()
+        if tc:is_open() then
+            tc:close()
+            return
+        end
+        tc:open()
+    end)
+
+    vim.keymap.set({ "n", "t" }, "<leader>tc", function()
+        local list = { ta, tb, tc }
+        for _, value in ipairs(list) do
+            if value:is_open() then
+                value:close()
+                return
+            end
+        end
+    end)
+end
+
+pluginKeys.todo = function (todo)
+    vim.keymap.set("n", "<leader>cj", function()
+        todo.jump_next()
+    end, { desc = "Next todo comment" })
+
+    vim.keymap.set("n", "<leader>ck", function()
+        todo.jump_prev()
+    end, { desc = "Previous todo comment" })
+end
+
 return pluginKeys

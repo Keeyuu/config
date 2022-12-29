@@ -57,38 +57,4 @@ local tc = Terminal:new({
     close_on_exit = true,
 })
 
-
-vim.keymap.set({ "n", "t" }, "<leader>tt", function()
-    if ta:is_open() then
-        ta:close()
-        return
-    end
-    ta:open()
-end)
-
-vim.keymap.set({ "n", "t" }, "<leader>tv", function()
-    if tb:is_open() then
-        tb:close()
-        return
-    end
-    tb:open()
-end)
-
-
-vim.keymap.set({ "n", "t" }, "<leader>th", function()
-    if tc:is_open() then
-        tc:close()
-        return
-    end
-    tc:open()
-end)
-
-vim.keymap.set({ "n", "t" }, "<leader>tc", function()
-    local list = { ta, tb, tc }
-    for _, value in ipairs(list) do
-        if value:is_open() then
-            value:close()
-            return
-        end
-    end
-end)
+require("keybindings").toggleterm(ta, tb, tc)
