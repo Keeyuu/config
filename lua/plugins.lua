@@ -3,12 +3,12 @@ local packer = require("packer")
 packer.startup({
     function(use)
         -- Packer 可以管理自己本身
-        use 'wbthomason/packer.nvim'
+        use "wbthomason/packer.nvim"
         --------------------- colorschemes --------------------
         -- tokyonight
         use("folke/tokyonight.nvim")
-        use { "catppuccin/nvim", as = "catppuccin" }
-        use("ful1e5/onedark.nvim")
+        use("ray-x/aurora")
+        use("RRethy/nvim-base16")
         ---other
         -----------------------文件树------------------
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
