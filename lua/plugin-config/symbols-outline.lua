@@ -5,7 +5,12 @@ if not status then
 end
 
 
-outline.setup()
+outline.setup({
+    position = 'right',
+    width = 25,
+    auto_close = false,
+    autofold_depth = nil
+})
 
 
 

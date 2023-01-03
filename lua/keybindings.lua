@@ -75,7 +75,6 @@ map("n", "q", ":q<CR>", opt)
 map("n", "qq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
 
-map("n", "<leader>w", ":w<CR>", opt)
 map("n", "<leader>u", ":edit!<CR>", opt)
 
 -- bufferline
@@ -84,7 +83,8 @@ map("n", "<A-l>", ":BufferLineCycleNext<CR>", opt)
 
 
 map("n", "<leader>bj", ":BufferLinePick<CR>", opt)
-map("n", "<leader>bw", ":Bdelete!<CR>", opt)
+map("n", "<leader>w", ":Bdelete!<CR>", opt)
+-- map("n", "<leader>bw", ":Bdelete!<CR>", opt)
 --map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 --map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bp", ":BufferLinePickClose<CR>", opt)

@@ -37,6 +37,7 @@ packer.startup({
         ---------------------补全引擎--------------------
         -- 补全引擎
         use("hrsh7th/nvim-cmp")
+        use("p00f/nvim-ts-rainbow")
         -- snippet 引擎
         use("hrsh7th/vim-vsnip")
         -- 补全源
@@ -88,7 +89,7 @@ packer.startup({
             "iamcco/markdown-preview.nvim",
             run = function() vim.fn["mkdp#util#install"]() end,
         })
-        use {"ellisonleao/glow.nvim"}
+        use { "ellisonleao/glow.nvim" }
         ----------------------lastplace-----------------
         use 'ethanholz/nvim-lastplace'
         ----------------------lazygit-------------------
@@ -101,6 +102,16 @@ packer.startup({
         })
         ----------------------diffview------------------
         use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+        ----------------------autosave------------------
+        use({
+            "Pocco81/auto-save.nvim",
+            config = function()
+                require("auto-save").setup {
+                    -- your config goes here
+                    -- or just leave it empty :)
+                }
+            end,
+        })
 
     end,
     config = {

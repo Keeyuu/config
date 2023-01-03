@@ -16,17 +16,19 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #   FiraCode Nerd Font Mono 
-    #   UbuntuMono Nerd Font
-    family: "FiraCode Nerd Font Mono"
+    #   UbuntuMono Nerd Font 
+    #   FantasqueSansMono Nerd Font
+    #   MesloLGL Nerd Font Mono
+    family: "MesloLGL Nerd Font Mono"
 
   bold:
-    family: "FiraCode Nerd Font Mono"
+    family: "MesloLGL Nerd Font Mono"
 
   italic:
-    family: "FiraCode Nerd Font Mono"
+    family: "MesloLGL Nerd Font Mono"
   bold_italic:
-    family: "FiraCode Nerd Font Mono"
-  size: 15.0
+    family: "MesloLGL Nerd Font Mono"
+  size: 13.0
 
 
 live_config_reload: true
