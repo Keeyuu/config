@@ -6,8 +6,6 @@ packer.startup({
         use "wbthomason/packer.nvim"
         --------------------- colorschemes --------------------
         -- tokyonight
-        use("folke/tokyonight.nvim")
-        use("ray-x/aurora")
         use("RRethy/nvim-base16")
         ---other
         -----------------------文件树------------------

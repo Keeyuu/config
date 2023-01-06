@@ -78,8 +78,8 @@ map("n", "Q", ":qa!<CR>", opt)
 map("n", "<leader>u", ":edit!<CR>", opt)
 
 -- bufferline
-map("n", "<A-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<A-l>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<M-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<M-l>", ":BufferLineCycleNext<CR>", opt)
 
 
 map("n", "<leader>bj", ":BufferLinePick<CR>", opt)
