@@ -22,7 +22,7 @@ lvim.format_on_save = {
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["q"] = ":bdelete!<cr>"
+lvim.keys.normal_mode["q"] = ":bdelete<cr>"
 lvim.keys.normal_mode["\""] = ":reg<cr>"
 lvim.keys.normal_mode["<A-h>"] = ":BufferLineCyclePrev<cr>"
 lvim.keys.normal_mode["<A-l>"] = ":BufferLineCycleNext<cr>"
@@ -117,12 +117,24 @@ lvim.plugins = {
         run = "./install.sh",
         requires = "hrsh7th/nvim-cmp",
         event = "InsertEnter",
-    }, {
-        "Pocco81/auto-save.nvim",
-        config = function()
-            require("auto-save").setup()
-        end,
     },
+    {
+        "simrat39/symbols-outline.nvim",
+        config = function()
+            require('symbols-outline').setup({
+                position = 'right',
+                width = 15,
+            })
+            vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<cr>", { silent = true })
+        end
+    },
+    -- {
+    --     "Pocco81/auto-save.nvim",
+    --     config = function()
+    --         require("auto-save").setup()
+    --     end,
+    -- },
+    -- 自动保存太恐怖了
 }
 
 
