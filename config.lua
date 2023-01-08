@@ -22,6 +22,7 @@ lvim.format_on_save = {
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+
 lvim.keys.normal_mode["q"] = ":bdelete<cr>"
 lvim.keys.normal_mode["\""] = ":reg<cr>"
 lvim.keys.normal_mode["<A-h>"] = ":BufferLineCyclePrev<cr>"
@@ -35,8 +36,11 @@ vim.api.nvim_set_keymap("n", "s", "", { silent = true })
 vim.api.nvim_set_keymap("n", "sv", ":vsp<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "sh", ":sp<CR>", { silent = true })
 
+vim.api.nvim_set_keymap("n", "<C-f>", "15k", { silent = true })
+vim.api.nvim_set_keymap("v", "<C-f>", "15k", { silent = true })
 
-
+vim.api.nvim_set_keymap("n", "<C-d>", "15j", { silent = true })
+vim.api.nvim_set_keymap("v", "<C-d>", "15j", { silent = true })
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
 -- -- Change theme settings
@@ -123,7 +127,7 @@ lvim.plugins = {
         config = function()
             require('symbols-outline').setup({
                 position = 'right',
-                width = 15,
+                width = 25,
             })
             vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<cr>", { silent = true })
         end
