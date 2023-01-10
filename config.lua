@@ -25,12 +25,23 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["q"] = ":bdelete<cr>"
 lvim.keys.normal_mode["\""] = ":reg<cr>"
-lvim.keys.normal_mode["<A-h>"] = ":BufferLineCyclePrev<cr>"
-lvim.keys.normal_mode["<A-l>"] = ":BufferLineCycleNext<cr>"
+lvim.keys.normal_mode["<M-h>"] = ":BufferLineCyclePrev<cr>"
+lvim.keys.normal_mode["<M-l>"] = ":BufferLineCycleNext<cr>"
 lvim.keys.normal_mode["<leader>ss"] = ":Telescope live_grep<cr>"
 lvim.keys.normal_mode["<leader>u"] = ":edit!<cr>"
-vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { silent = true })
-vim.api.nvim_set_keymap("v", "<C-_>", "gcc", { silent = true })
+if false then
+    lvim.transparent_window = true -- 开启背景透明
+    vim.cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
+    vim.cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none"
+    vim.cmd "au ColorScheme * hi NormalNC ctermbg=none guibg=none"
+    vim.cmd "au ColorScheme * hi MsgArea ctermbg=none guibg=none"
+    vim.cmd "au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none"
+    vim.cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
+    vim.cmd "let &fcs='eob: '"
+end
+--背景
+vim.api.nvim_set_keymap("n", "<C-/>", "gcc", { silent = true })
+vim.api.nvim_set_keymap("v", "<C-/>", "gcc", { silent = true })
 vim.api.nvim_set_keymap("n", "s", "", { silent = true })
 
 vim.api.nvim_set_keymap("n", "sv", ":vsp<CR>", { silent = true })
@@ -42,7 +53,12 @@ vim.api.nvim_set_keymap("v", "<C-u>", "15k", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-d>", "15j", { silent = true })
 vim.api.nvim_set_keymap("v", "<C-d>", "15j", { silent = true })
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-
+-- neovide
+vim.cmd([[
+let g:neovide_input_macos_alt_is_meta = v:true
+set guifont=MesloLGL\ Nerd\ Font\ Mono:h13
+let g:neovide_cursor_vfx_mode = "sonicboom"
+]])
 -- -- Change theme settings
 -- lvim.colorscheme = "lunar"
 lvim.builtin.alpha.active = true
@@ -132,6 +148,9 @@ lvim.plugins = {
             vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<cr>", { silent = true })
         end
     },
+    {
+        "RRethy/nvim-base16"
+    }
     -- {
     --     "Pocco81/auto-save.nvim",
     --     config = function()
