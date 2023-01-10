@@ -36,8 +36,8 @@ vim.api.nvim_set_keymap("n", "s", "", { silent = true })
 vim.api.nvim_set_keymap("n", "sv", ":vsp<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "sh", ":sp<CR>", { silent = true })
 
-vim.api.nvim_set_keymap("n", "<C-f>", "15k", { silent = true })
-vim.api.nvim_set_keymap("v", "<C-f>", "15k", { silent = true })
+vim.api.nvim_set_keymap("n", "<C-u>", "15k", { silent = true })
+vim.api.nvim_set_keymap("v", "<C-u>", "15k", { silent = true })
 
 vim.api.nvim_set_keymap("n", "<C-d>", "15j", { silent = true })
 vim.api.nvim_set_keymap("v", "<C-d>", "15j", { silent = true })
