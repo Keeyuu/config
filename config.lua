@@ -12,7 +12,7 @@ vim.opt.showmode = true
 lvim.log.level = "info"
 lvim.format_on_save = {
     enabled = true,
-    pattern = { "*.lua", "*.go" },
+    pattern = { "*" },
     timeout = 1000,
 }
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -50,9 +50,10 @@ set guifont=MesloLGL\ Nerd\ Font\ Mono:h13
 let g:neovide_cursor_vfx_mode = "sonicboom"
 set foldmethod=indent
 let g:neovide_transparency = 0.85
-let g:neovide_refresh_rate = 90 
+let g:neovide_refresh_rate = 90
 let g:neovide_refresh_rate_idle = 3
-]])
+]]
+)
 -- set foldopen=all
 -- set foldclose=all
 -- -- Change theme settings
