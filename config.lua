@@ -29,17 +29,6 @@ lvim.keys.normal_mode["<M-h>"] = ":BufferLineCyclePrev<cr>"
 lvim.keys.normal_mode["<M-l>"] = ":BufferLineCycleNext<cr>"
 lvim.keys.normal_mode["<leader>ss"] = ":Telescope live_grep<cr>"
 lvim.keys.normal_mode["<leader>u"] = ":edit!<cr>"
-if false then
-    lvim.transparent_window = true -- 开启背景透明
-    vim.cmd "au ColorScheme * hi Normal ctermbg=none guibg=none"
-    vim.cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none"
-    vim.cmd "au ColorScheme * hi NormalNC ctermbg=none guibg=none"
-    vim.cmd "au ColorScheme * hi MsgArea ctermbg=none guibg=none"
-    vim.cmd "au ColorScheme * hi TelescopeBorder ctermbg=none guibg=none"
-    vim.cmd "au ColorScheme * hi NvimTreeNormal ctermbg=none guibg=none"
-    vim.cmd "let &fcs='eob: '"
-end
---背景
 vim.api.nvim_set_keymap("n", "<C-/>", "gcc", { silent = true })
 vim.api.nvim_set_keymap("v", "<C-/>", "gcc", { silent = true })
 vim.api.nvim_set_keymap("n", "s", "", { silent = true })
@@ -60,13 +49,14 @@ let g:neovide_input_macos_alt_is_meta = v:true
 set guifont=MesloLGL\ Nerd\ Font\ Mono:h13
 let g:neovide_cursor_vfx_mode = "sonicboom"
 set foldmethod=indent
-" set foldlevel=0
-" set foldopen=all
+let g:neovide_transparency = 0.85
+let g:neovide_refresh_rate = 90 
+let g:neovide_refresh_rate_idle = 3
 ]])
 -- set foldopen=all
 -- set foldclose=all
 -- -- Change theme settings
--- lvim.colorscheme = "lunar"
+lvim.colorscheme = "base16-onedark" --lunar
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
