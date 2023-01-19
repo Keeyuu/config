@@ -43,6 +43,7 @@ vim.api.nvim_set_keymap("v", "<D-s>", "y", { silent = true })
 vim.api.nvim_set_keymap("n", "<D-v>", "p", { silent = true })
 vim.api.nvim_set_keymap("v", "<D-v>", "p", { silent = true })
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.transparent_window = true
 -- neovide
 vim.cmd([[
 let g:neovide_input_macos_alt_is_meta = v:true
@@ -61,9 +62,28 @@ lvim.colorscheme = "base16-onedark" --lunar
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.view.width = 45
+lvim.builtin.nvimtree.setup.view.mappings.list = {
+    -- 进入下一级
+    { key = { "]" }, action = "cd" },
+    -- 进入上一级
+    { key = { "[" }, action = "dir_up" },
+    { key = { "l", "<CR>", "o" }, action = "edit", mode = "n" },
+    { key = "so", action = "system_open" },
+    { key = "K", action = "toggle_file_info" },
+    { key = ".", action = "toggle_dotfiles" },
+    -- v分屏打开文件
+    { key = "v", action = "vsplit" },
+    -- h分屏打开文件
+    { key = "h", action = "split" },
+    { key = "y", action = "copy_name" },
+    { key = "Y", action = "copy_path" },
+    { key = "gy", action = "copy_absolute_path" },
+}
+
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
