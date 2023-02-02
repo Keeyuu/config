@@ -29,8 +29,10 @@ lvim.keys.normal_mode["<M-h>"] = ":BufferLineCyclePrev<cr>"
 lvim.keys.normal_mode["<M-l>"] = ":BufferLineCycleNext<cr>"
 lvim.keys.normal_mode["<leader>ss"] = ":Telescope live_grep<cr>"
 lvim.keys.normal_mode["<leader>u"] = ":edit!<cr>"
-vim.api.nvim_set_keymap("n", "<C-/>", "gcc", { silent = true })
-vim.api.nvim_set_keymap("v", "<C-/>", "gcc", { silent = true })
+lvim.keys.normal_mode["<leader>zi"] = ":set foldmethod=indent<cr>"
+lvim.keys.normal_mode["<leader>zm"] = ":set foldmethod=manual<cr>"
+vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { silent = true })
+vim.api.nvim_set_keymap("v", "<C-_>", "gcc", { silent = true })
 vim.api.nvim_set_keymap("n", "s", "", { silent = true })
 
 vim.api.nvim_set_keymap("n", "sv", ":vsp<CR>", { silent = true })
@@ -44,28 +46,34 @@ vim.api.nvim_set_keymap("n", "<D-v>", "p", { silent = true })
 vim.api.nvim_set_keymap("v", "<D-v>", "p", { silent = true })
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.transparent_window = true
--- neovide
-vim.cmd([[
-let g:neovide_input_macos_alt_is_meta = v:true
-set guifont=MesloLGL\ Nerd\ Font\ Mono:h13
-let g:neovide_cursor_vfx_mode = "sonicboom"
-set foldmethod=indent
-let g:neovide_transparency = 0.85
-let g:neovide_refresh_rate = 90
-let g:neovide_refresh_rate_idle = 3
-]]
-)
+-- lvim.autocommands = {
+--     {
+--         "BufRead", {
+--             -- pattern = { "*.cpp", "*.hpp" },
+--             callback = function()
+--                 vim.cmd([[
+--                 set foldmethod=indent
+--                 SymbolsOutline
+--                 ]]
+--                 )
+--             end
+--         },
+--     }
+-- }
+-- vim.cmd([[
+-- set foldmethod=manual
+-- ]])
 -- set foldopen=all
 -- set foldclose=all
 -- -- Change theme settings
-lvim.colorscheme = "base16-onedark" --lunar
+lvim.colorscheme = "base16-tokyo-night-terminal-storm" --"base16-onedark" --lunar
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
-lvim.builtin.nvimtree.setup.view.width = 45
+lvim.builtin.nvimtree.setup.view.width = 55
 lvim.builtin.nvimtree.setup.view.mappings.list = {
     -- 进入下一级
     { key = { "]" }, action = "cd" },
@@ -152,22 +160,31 @@ lvim.plugins = {
     },
     {
         "tzachar/cmp-tabnine",
-        run = "./install.sh",
-        requires = "hrsh7th/nvim-cmp",
+        build = "./install.sh",
+        dependencies = "hrsh7th/nvim-cmp",
         event = "InsertEnter",
     },
     {
         "simrat39/symbols-outline.nvim",
         config = function()
             require('symbols-outline').setup({
-                position = 'right',
-                width = 25,
+                position = 'left',
+                width = 39,
+                auto_preview = true,
+                auto_close = true,
+                show_relative_numbers = true
             })
             vim.api.nvim_set_keymap("n", "<leader>o", ":SymbolsOutline<cr>", { silent = true })
         end
     },
     {
         "RRethy/nvim-base16"
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        config = function()
+            require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/Users/keeyu/.config/config/friendly-snippets" } })
+        end
     }
     -- {
     --     "Pocco81/auto-save.nvim",
