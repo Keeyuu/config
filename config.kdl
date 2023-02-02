@@ -5,6 +5,8 @@ keybinds {
         // bind "Alt c" { Copy; }
         unbind "Ctrl o"
         unbind "Ctrl h"
+        unbind "Alt h"
+        unbind "Alt l"
         bind "Ctrl y" {SwitchToMode "session";}
         bind "Ctrl m" {SwitchToMode "Move";}
     }
