@@ -29,8 +29,6 @@ lvim.keys.normal_mode["<M-h>"] = ":BufferLineCyclePrev<cr>"
 lvim.keys.normal_mode["<M-l>"] = ":BufferLineCycleNext<cr>"
 lvim.keys.normal_mode["<leader>ss"] = ":Telescope live_grep<cr>"
 lvim.keys.normal_mode["<leader>u"] = ":edit!<cr>"
-lvim.keys.normal_mode["<leader>zi"] = ":set foldmethod=indent<cr>"
-lvim.keys.normal_mode["<leader>zm"] = ":set foldmethod=manual<cr>"
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { silent = true })
 vim.api.nvim_set_keymap("v", "<C-_>", "gcc", { silent = true })
 
@@ -74,7 +72,7 @@ lvim.transparent_window = true
 -- set foldopen=all
 -- set foldclose=all
 -- -- Change theme settings
-lvim.colorscheme = "base16-tokyo-night-terminal-storm" --"base16-onedark" --lunar
+-- lvim.colorscheme = "base16-tokyo-night-terminal-storm" --"base16-onedark" --lunar
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
@@ -194,6 +192,25 @@ lvim.plugins = {
         config = function()
             require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/Users/keeyu/.config/config/friendly-snippets" } })
         end
+    },
+    {
+        "kevinhwang91/nvim-ufo", -- 折叠
+        dependencies = "kevinhwang91/promise-async",
+        config = function()
+            vim.o.foldcolumn = '1' -- '0' is not bad
+            vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+            vim.o.foldlevelstart = 99
+            vim.o.foldenable = true
+            -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+            vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+            vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+            require('ufo').setup({
+                provider_selector = function(bufnr, filetype, buftype)
+                    return { 'treesitter', 'indent' }
+                end
+            })
+        end
+
     }
     -- {
     --     "Pocco81/auto-save.nvim",
