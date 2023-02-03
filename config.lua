@@ -33,10 +33,18 @@ lvim.keys.normal_mode["<leader>zi"] = ":set foldmethod=indent<cr>"
 lvim.keys.normal_mode["<leader>zm"] = ":set foldmethod=manual<cr>"
 vim.api.nvim_set_keymap("n", "<C-_>", "gcc", { silent = true })
 vim.api.nvim_set_keymap("v", "<C-_>", "gcc", { silent = true })
-vim.api.nvim_set_keymap("n", "s", "", { silent = true })
 
-vim.api.nvim_set_keymap("n", "sv", ":vsp<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "sh", ":sp<CR>", { silent = true })
+
+-- vim.api.nvim_set_keymap("n", "s", "", { silent = true })
+-- vim.api.nvim_set_keymap("n", "sv", ":vsp<CR>", { silent = true })
+-- vim.api.nvim_set_keymap("n", "sh", ":sp<CR>", { silent = true })
+lvim.keys.normal_mode["<leader>jv"] = ":vsp<CR>"
+lvim.keys.normal_mode["<leader>jh"] = ":sp<CR>"
+
+-- 把gs展示代码?k息换成 gi  vim.lsp.buf.signatureHelp 是函数
+lvim.lsp.buffer_mappings.normal_mode['gs'] = nil
+lvim.lsp.buffer_mappings.normal_mode['gi'] = { vim.lsp.buf.signature_help, "Show signatureHelp" }
+-- vim.keymap.set({ 'n', 'x', 'o' }, 'gs', "(leap-cross-window)")
 
 
 vim.api.nvim_set_keymap("n", "<D-s>", "y", { silent = true })
@@ -98,16 +106,17 @@ lvim.builtin.treesitter.auto_install = true
 -- lvim.builtin.alpha.dashboard.config=
 
 lvim.plugins = {
+
     {
-        "phaazon/hop.nvim",
+        "ggandor/leap.nvim",
         event = "BufRead",
         config = function()
-            require("hop").setup()
-            vim.api.nvim_set_keymap("n", "<leader>j", ":HopWord<cr>", { silent = true })
+            require('leap').add_default_mappings()
         end,
+
     },
     {
-        "windwp/nvim-spectre",
+        "windwp/nvim-spectre", -- 替换功能
         event = "BufRead",
         config = function()
             require("spectre").setup()
@@ -121,7 +130,7 @@ lvim.plugins = {
         end,
     },
     {
-        "sindrets/diffview.nvim",
+        "sindrets/diffview.nvim", -- git 对比 nb
         event = "BufRead",
     },
     {
@@ -181,7 +190,7 @@ lvim.plugins = {
         "RRethy/nvim-base16"
     },
     {
-        "L3MON4D3/LuaSnip",
+        "L3MON4D3/LuaSnip", -- 自定义代码片段
         config = function()
             require("luasnip.loaders.from_vscode").lazy_load({ paths = { "/Users/keeyu/.config/config/friendly-snippets" } })
         end
@@ -193,6 +202,14 @@ lvim.plugins = {
     --     end,
     -- },
     -- 自动保存太恐怖了
+    -- {
+    --     "phaazon/hop.nvim",
+    --     event = "BufRead",
+    --     config = function()
+    --         require("hop").setup()
+    --         vim.api.nvim_set_keymap("n", "<leader>j", ":HopWord<cr>", { silent = true })
+    --     end,
+    -- },
 }
 
 

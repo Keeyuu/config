@@ -7,6 +7,8 @@ keybinds {
         unbind "Ctrl h"
         unbind "Alt h"
         unbind "Alt l"
+        unbind "Alt j"
+        unbind "Alt k"
         bind "Ctrl y" {SwitchToMode "session";}
         bind "Ctrl m" {SwitchToMode "Move";}
     }
