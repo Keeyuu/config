@@ -13,7 +13,6 @@
 (define-key evil-normal-state-map (kbd "/") 'swiper)
 (define-key evil-normal-state-map (kbd ":") 'counsel-M-x )
 ;;-----f-----
-(define-key evil-normal-state-map (kbd "<leader>ft") 'neotree-find)
 (define-key evil-normal-state-map (kbd "<leader>ff") 'counsel-find-file )
 ;;-----m-----
 (define-key evil-normal-state-map (kbd "<leader>mj") 'counsel-bookmark )
@@ -43,7 +42,7 @@
 ;;-----t----
 (define-key evil-normal-state-map (kbd "M-0") 'treemacs-select-window)
 (define-key evil-normal-state-map (kbd "<leader>tp") 'treemacs)
-(define-key evil-normal-state-map (kbd "<leader>tt") 'neotree)
+(define-key evil-normal-state-map (kbd "<leader>tt") 'neotree-find)
 (define-key evil-normal-state-map (kbd "<leader>tn") 'treemacs-project)
 
 

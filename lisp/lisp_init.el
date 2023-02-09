@@ -80,7 +80,7 @@
   :defer t
   :config
   (treemacs-tag-follow-mode)
-  (progn (setq treemacs-width                           55))
+  (progn (setq treemacs-width                           60))
 )
 
 (use-package treemacs-projectile
