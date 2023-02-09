@@ -1,0 +1,9 @@
+ls 
+clear 
+lazygit 
+clear 
+ls 
+mkdir org
+ls 
+cd org/
+touch note.org

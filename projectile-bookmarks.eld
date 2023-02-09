@@ -1,1 +1,1 @@
-nil
+("~/Library/Mobile Documents/com~apple~CloudDocs/note/doc/" "~/code/company/server/" "~/.emacs.d/" "/opt/homebrew/" "~/code/self/probation/probation/admin/" "~/code/company/probation/")

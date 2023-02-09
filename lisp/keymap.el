@@ -10,6 +10,11 @@
 (global-set-key (kbd "C-u") 'evil-scroll-page-up)
 (global-set-key (kbd "C-d") 'evil-scroll-page-down)
 
+
+(define-key evil-normal-state-map (kbd "TAB") 'evil-jump-to-tag)
+
+(evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
+
 (define-key evil-normal-state-map (kbd "/") 'swiper)
 (define-key evil-normal-state-map (kbd ":") 'counsel-M-x )
 ;;-----f-----
@@ -44,6 +49,11 @@
 (define-key evil-normal-state-map (kbd "<leader>tp") 'treemacs)
 (define-key evil-normal-state-map (kbd "<leader>tt") 'neotree-find)
 (define-key evil-normal-state-map (kbd "<leader>tn") 'treemacs-project)
+;;-----g----
+(define-key evil-normal-state-map (kbd "<leader>gh") 'vc-annotate)
+;;-----r----
+(define-key evil-normal-state-map (kbd "<leader>rs") 'query-replace)
+(define-key evil-normal-state-map (kbd "<leader>rr") 'query-replace-regexp)
 
 
 ;;

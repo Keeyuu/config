@@ -2,17 +2,17 @@
 ;; ----- amx-history -----
 (
  restart-emacs
+ eval-buffer
+ org-mode
  go-mode
+ org-cycle
+ eshell
  lsp
- lsp-restart-workspace
- reset-language-environment
- dashboard-refresh-buffer
- treemacs-projectile
 )
 
 ;; ----- amx-data -----
 (
- (restart-emacs . 34)
+ (restart-emacs . 37)
  (apropos-follow . 1)
  (markdown-mode . 1)
  (markdown-preview . 5)
@@ -30,7 +30,7 @@
  (counsel-bookmarked-directory . 3)
  (bookmark-menu . 3)
  (bookmark-bmenu-show-annotation . 1)
- (eval-buffer . 48)
+ (eval-buffer . 69)
  (bookmark-bmenu-other-frame . 2)
  (dashboard-return . 2)
  (dashboard-mode . 2)
@@ -74,9 +74,17 @@
  (flycheck-clear . 2)
  (flycheck-error-list-mode . 3)
  (vc-print-log . 1)
- (go-mode . 6)
+ (go-mode . 8)
  (lsp-goto-type-definition . 1)
  (gofmt . 1)
  (reset-language-environment . 6)
  (lsp-restart-workspace . 2)
+ (vc-annotate . 1)
+ (replace-string . 4)
+ (swiper-from-isearch . 1)
+ (query-replace . 1)
+ (eshell . 2)
+ (org-cycle . 3)
+ (org-mode-restart . 2)
+ (org-mode . 4)
 )
