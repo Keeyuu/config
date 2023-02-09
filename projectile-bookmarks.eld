@@ -1,0 +1,1 @@
+("~/code/self/tool/" "~/code/company/server/")

@@ -1,0 +1,72 @@
+
+;; ----- amx-history -----
+(
+ term
+ eval-buffer
+ treemacs-projectile
+ treemacs-find-tag
+ restart-emacs
+ treemacs
+ dashboard-refresh-buffer
+)
+
+;; ----- amx-data -----
+(
+ (restart-emacs . 29)
+ (apropos-follow . 1)
+ (markdown-mode . 1)
+ (markdown-preview . 5)
+ (markdown-preview-mode . 2)
+ (markdown-preview-open-browser . 1)
+ (scroll-down . 1)
+ (marginalia-cycle . 1)
+ (ivy-next-line-or-history . 2)
+ (counsel-M-x . 1)
+ (whois . 3)
+ (save-buffer . 3)
+ (counsel-grep . 1)
+ (counsel-imenu . 1)
+ (counsel-bookmark . 7)
+ (counsel-bookmarked-directory . 3)
+ (bookmark-menu . 3)
+ (bookmark-bmenu-show-annotation . 1)
+ (eval-buffer . 46)
+ (bookmark-bmenu-other-frame . 2)
+ (dashboard-return . 2)
+ (dashboard-mode . 2)
+ (dashboard-previous-section . 2)
+ (dashboard-jump-to-recents . 1)
+ (downcase-word . 1)
+ (upcase-word . 1)
+ (ivy-resume . 17)
+ (counsel-info-lookup-symbol . 1)
+ (dashboard-refresh-buffer . 6)
+ (counsel-git . 1)
+ (counsel-git-log . 1)
+ (shell . 3)
+ (lsp . 15)
+ (lsp-install-server . 2)
+ (universal-argument . 2)
+ (term . 4)
+ (quit-window . 1)
+ (kill-buffer-and-window . 1)
+ (getenv . 1)
+ (lsp-rust-analyzer-syntax-tree . 1)
+ (lsp-rust-switch-server . 2)
+ (lsp-rust-analyzer-open-cargo-toml . 1)
+ (neotree . 1)
+ (lsp-ui-mode . 2)
+ (lsp-ui-doc-show . 5)
+ (lsp-ui-doc-toggle . 1)
+ (lsp-find-references . 1)
+ (lsp-find-declaration . 1)
+ (rust-mode . 1)
+ (yas-reload-all . 2)
+ (lsp-format-buffer . 1)
+ (yas-global-mode . 3)
+ (yas-expand . 2)
+ (goto-last-change . 3)
+ (treemacs . 2)
+ (treemacs-projectile . 3)
+ (treemacs-find-tag . 3)
+)

@@ -1,0 +1,20 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("paypal"
+ (filename . "~/code/company/server/src/payment/payservice/handler/paypal_handler.go")
+ (front-context-string . "r) HandleWebhook")
+ (rear-context-string . "(h *paypalHandle")
+ (position . 3580))
+(".zshrc"
+ (filename . "~/.zshrc")
+ (front-context-string . "export ZSH=\"$HOM")
+ (rear-context-string)
+ (position . 1))
+("test-go"
+ (filename . "~/code/self/test-go/main.go")
+ (front-context-string . "	gc := gcache.Ne")
+ (rear-context-string . "\n\nfunc main() {\n")
+ (position . 85))
+)
