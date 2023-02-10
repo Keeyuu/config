@@ -19,6 +19,7 @@
 (define-key evil-normal-state-map (kbd ":") 'counsel-M-x )
 ;;-----f-----
 (define-key evil-normal-state-map (kbd "<leader>ff") 'counsel-find-file )
+(define-key evil-normal-state-map (kbd "<leader>fd") 'dired )
 ;;-----m-----
 (define-key evil-normal-state-map (kbd "<leader>mj") 'counsel-bookmark )
 (define-key evil-normal-state-map (kbd "<leader>md") 'bookmark-delete )
@@ -42,18 +43,20 @@
 (define-key evil-normal-state-map (kbd "<leader>wh") 'split-window-horizontally)
 (define-key evil-normal-state-map (kbd "<leader>wv") 'split-window-vertically)
 (define-key evil-normal-state-map (kbd "<leader>wq") 'kill-buffer-and-window)
+(define-key evil-normal-state-map (kbd "<leader>wk") 'kill-buffer)
 ;;-----h----
 (define-key evil-normal-state-map (kbd "<leader>h") 'undo-tree-visualize)
 ;;-----t----
 (define-key evil-normal-state-map (kbd "M-0") 'treemacs-select-window)
-(define-key evil-normal-state-map (kbd "<leader>tp") 'treemacs)
-(define-key evil-normal-state-map (kbd "<leader>tt") 'neotree-find)
+(define-key evil-normal-state-map (kbd "<leader>tt") 'treemacs)
 (define-key evil-normal-state-map (kbd "<leader>tn") 'treemacs-project)
 ;;-----g----
 (define-key evil-normal-state-map (kbd "<leader>gh") 'vc-annotate)
 ;;-----r----
 (define-key evil-normal-state-map (kbd "<leader>rs") 'query-replace)
 (define-key evil-normal-state-map (kbd "<leader>rr") 'query-replace-regexp)
+;;-----r----
+(define-key evil-normal-state-map (kbd "<leader>al") 'org-agenda-list)
 
 
 ;;

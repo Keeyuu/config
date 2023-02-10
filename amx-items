@@ -1,13 +1,13 @@
 
 ;; ----- amx-history -----
 (
- restart-emacs
+ term
  eval-buffer
- org-mode
- go-mode
- org-cycle
- eshell
- lsp
+ quit-window
+ kill-buffer
+ dashboard-refresh-buffer
+ org-agenda-list
+ org-agenda-menu
 )
 
 ;; ----- amx-data -----
@@ -30,7 +30,7 @@
  (counsel-bookmarked-directory . 3)
  (bookmark-menu . 3)
  (bookmark-bmenu-show-annotation . 1)
- (eval-buffer . 69)
+ (eval-buffer . 76)
  (bookmark-bmenu-other-frame . 2)
  (dashboard-return . 2)
  (dashboard-mode . 2)
@@ -40,15 +40,15 @@
  (upcase-word . 1)
  (ivy-resume . 17)
  (counsel-info-lookup-symbol . 1)
- (dashboard-refresh-buffer . 8)
+ (dashboard-refresh-buffer . 17)
  (counsel-git . 2)
  (counsel-git-log . 1)
  (shell . 3)
  (lsp . 17)
  (lsp-install-server . 2)
  (universal-argument . 2)
- (term . 4)
- (quit-window . 1)
+ (term . 6)
+ (quit-window . 2)
  (kill-buffer-and-window . 1)
  (getenv . 1)
  (lsp-rust-analyzer-syntax-tree . 1)
@@ -83,8 +83,11 @@
  (replace-string . 4)
  (swiper-from-isearch . 1)
  (query-replace . 1)
- (eshell . 2)
+ (eshell . 3)
  (org-cycle . 3)
  (org-mode-restart . 2)
  (org-mode . 4)
+ (org-agenda-list . 2)
+ (org-agenda-menu . 1)
+ (kill-buffer . 1)
 )

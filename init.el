@@ -63,7 +63,7 @@
    '("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default))
  '(max-lisp-eval-depth 2000)
  '(package-selected-packages
-   '(lsp-treemacs treemacs-projectile treemacs rust-mode lsp-ui counsel-projectile projectile yasnippet-snippets which-key websocket web-server use-package-hydra undo-tree undo-fu smart-mode-line restart-emacs rainbow-delimiters posframe neotree monokai-theme marginalia lsp-ivy hydra go-mode flycheck evil drag-stuff dashboard counsel company-tabnine company-box amx ace-window)))
+   '(vterm lsp-treemacs treemacs-projectile treemacs rust-mode lsp-ui counsel-projectile projectile yasnippet-snippets which-key websocket web-server use-package-hydra undo-tree undo-fu smart-mode-line restart-emacs rainbow-delimiters posframe neotree monokai-theme marginalia lsp-ivy hydra go-mode flycheck evil drag-stuff dashboard counsel company-tabnine company-box amx ace-window)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

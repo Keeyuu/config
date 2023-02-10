@@ -56,25 +56,17 @@
   :config
   (setq dashboard-banner-logo-title "Welcome to Emacs!") ;; 个性签名，随读者喜好设置
   (setq dashboard-projects-backend 'projectile) ;; 读者可以暂时注释掉这一行，等安装了 projectile 后再使用
-  (setq dashboard-startup-banner 'official) ;; 也可以自定义图片
+  (setq dashboard-startup-banner 'logo) ;; 也可以自定义图片
   (setq dashboard-items '((recents  . 5)   ;; 显示多少个最近文件
-			  (bookmarks . 10)  ;; 显示多少个最近书签
-			  (projects . 10))) ;; 显示多少个最近项目
+			  (bookmarks . 5)  ;; 显示多少个最近书签
+			  (projects . 5)
+			  (agenda . 5)
+			  (registers . 5)
+			  )) ;; 显示多少个最近项目
   (dashboard-setup-startup-hook))
 ;; 移动块
 (use-package drag-stuff :bind (("M-k" . drag-stuff-up) ("M-j" . drag-stuff-down)))
-(use-package neotree
-             :config
-             (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
-             (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
-             (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-             (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
-             (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
-             (evil-define-key 'normal neotree-mode-map (kbd "n") 'neotree-next-line)
-             (evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-previous-line)
-             (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
-             (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
-)
+
 
 (use-package treemacs
   :defer t
@@ -135,6 +127,23 @@
          "\\|"))))
 
 
+(use-package vterm)
 (require 'keymap)
 (require 'lsp)
 (provide 'lisp_init)
+
+
+
+
+;;(use-package neotree
+;;             :config
+;;             (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+;;             (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
+;;             (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+;;             (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+;;             (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
+;;             (evil-define-key 'normal neotree-mode-map (kbd "n") 'neotree-next-line)
+;;             (evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-previous-line)
+;;             (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
+;;             (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
+;;)

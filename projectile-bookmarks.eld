@@ -1,1 +1,1 @@
-("~/Library/Mobile Documents/com~apple~CloudDocs/note/doc/" "~/code/company/server/" "~/.emacs.d/" "/opt/homebrew/" "~/code/self/probation/probation/admin/" "~/code/company/probation/")
+("~/.emacs.d/" "~/code/company/server/" "~/Library/Mobile Documents/com~apple~CloudDocs/note/doc/" "~/code/self/probation/probation/admin/" "~/code/company/probation/")
