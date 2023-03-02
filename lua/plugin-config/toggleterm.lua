@@ -47,14 +47,14 @@ local ta = Terminal:new({
     close_on_exit = true,
 })
 
-local tb = Terminal:new({
-    direction = "vertical",
-    close_on_exit = true,
-})
+-- local tb = Terminal:new({
+--     direction = "vertical",
+--     close_on_exit = true,
+-- })
+--
+-- local tc = Terminal:new({
+--     direction = "horizontal",
+--     close_on_exit = true,
+-- })
 
-local tc = Terminal:new({
-    direction = "horizontal",
-    close_on_exit = true,
-})
-
-require("keybindings").toggleterm(ta, tb, tc)
+require("keybindings").toggleterm(ta)

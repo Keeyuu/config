@@ -14,7 +14,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
     -- 确保安装，根据需要填写
     ensure_installed = {
-        "sumneko_lua",
+        "lua_ls",
         "tsserver",
         "tailwindcss",
         "bashls",
@@ -29,10 +29,8 @@ require("mason-lspconfig").setup({
         "taplo",
         "gopls",
         "cmake",
-        -- "csharp_ls",
         "sqls",
         "vimls",
-        -- "volar",
         "marksman",
         "clangd",
         "bufls",
@@ -43,7 +41,7 @@ require("mason-lspconfig").setup({
 local lspconfig = require("lspconfig")
 local Default = "default"
 local servers = {
-    sumneko_lua = Default, -- lua/lsp/config/lua.lua
+    lua_ls = Default, -- lua/lsp/config/lua.lua
     bashls = Default,
     pyright = Default,
     html = Default,
@@ -58,14 +56,11 @@ local servers = {
     taplo = Default,
     gopls = Default,
     cmake = Default,
-    -- csharp_ls = Default,
     sqls = Default,
     vimls = Default,
-    -- volar = Default,
     marksman = Default,
     clangd = Default,
     bufls = Default,
-    --xxx  = require("lsp.config.xxxx")
 }
 
 for name, config in pairs(servers) do

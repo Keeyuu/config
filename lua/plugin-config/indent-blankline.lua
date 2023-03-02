@@ -23,7 +23,6 @@ ident_blankline.setup({
     "block",
     "arguments",
   },
-  -- :echo &filetype
   filetype_exclude = {
     "dashboard",
     "packer",
@@ -36,10 +35,5 @@ ident_blankline.setup({
     "lspinfo",
     "toggleterm",
   },
-  -- 竖线样式
-  -- char = '¦'
-  -- char = '┆'
-  -- char = '│'
-  -- char = "⎸",
   char = "▏",
 })

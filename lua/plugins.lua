@@ -16,7 +16,7 @@ packer.startup({
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
         use("arkav/lualine-lsp-progress")
         ----------------------搜索-------------------
-        -- use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
+        use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
         ----------------------启动页面-------------------
         use("glepnir/dashboard-nvim")
         ----------------------项目-------------------
@@ -45,31 +45,18 @@ packer.startup({
         use("hrsh7th/cmp-path") -- { name = 'path' }
         use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
         use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
-        -- 常见编程语言代码段
-        use("rafamadriz/friendly-snippets")
         -- ui 补全图标显示
         use("onsails/lspkind-nvim")
         -----------------------代码快辅助线------------------
         use("lukas-reineke/indent-blankline.nvim")
         -----------------------------------------
         use("tami5/lspsaga.nvim")
-        -- 代码格式化
-        use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
         -----------------------自动括号------------------
         use("windwp/nvim-autopairs")
         ----------------------surround------------------
         use("ur4ltz/surround.nvim")
-        ----------------------outline------------------
-        use 'simrat39/symbols-outline.nvim'
-        ----------------------hop------------------
-        use {
-            'phaazon/hop.nvim',
-            branch = 'v2', -- optional but strongly recommended
-        }
         ----------------------which-key------------------
         use("folke/which-key.nvim")
-        -----------------------gitsigns-----------------
-        -- use("lewis6991/gitsigns.nvim")
         ----------------------toggleterm------------------
         use("akinsho/toggleterm.nvim")
         ----------------------todo------------------
@@ -87,29 +74,15 @@ packer.startup({
             "iamcco/markdown-preview.nvim",
             run = function() vim.fn["mkdp#util#install"]() end,
         })
-        use { "ellisonleao/glow.nvim" }
         ----------------------lastplace-----------------
         use 'ethanholz/nvim-lastplace'
         ----------------------lazygit-------------------
         use({
             "nvim-telescope/telescope.nvim",
-            requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
-            config = function()
-                require("telescope").load_extension("lazygit")
-            end,
+            requires = { { "nvim-lua/plenary.nvim" }}
         })
         ----------------------diffview------------------
         use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-        ----------------------autosave------------------
-        use({
-            "Pocco81/auto-save.nvim",
-            config = function()
-                require("auto-save").setup {
-                    -- your config goes here
-                    -- or just leave it empty :)
-                }
-            end,
-        })
 
     end,
     config = {

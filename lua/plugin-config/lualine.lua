@@ -15,7 +15,6 @@ lualine.setup({
     extensions = { "nvim-tree", "toggleterm" },
     sections = {
         lualine_c = {
-            "123.455",
             {
                 "lsp_progress",
                 spinner_symbols = { " ", " ", " ", " ", " ", " " },
