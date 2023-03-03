@@ -14,12 +14,17 @@ map("v", "g_", "$", opt)
 map("n", "$", "g_", opt)
 map("n", "g_", "$", opt)
 
--- 取消 s 默认功能
-map("n", "s", "", opt)
-map("n", "sv", ":vsp<CR>", opt)
-map("n", "sh", ":sp<CR>", opt)
-map("n", "sw", "<C-w>c", opt)
-map("n", "so", "<C-w>o", opt)
+-- 取消 s 回车重复上一次搜索 空格 tab 扩展选择太多的情况 ;往后选择 
+map("n", "s", "<Plug>(leap-forward-to)", opt)
+map("n", "S", "<Plug>(leap-backward-to)", opt)
+map("n", "t", "<Plug>(leap-forward-till)", opt) --和其他操作配合
+map("n", "T", "<Plug>(leap-backward-till)", opt)
+map("n", "gs", "<Plug>(leap-from-window)", opt)
+
+map("n", "<leader>wv", ":vsp<CR>", opt)
+map("n", "<leader>wh", ":sp<CR>", opt)
+map("n", "<leader>ww", "<C-w>c", opt)
+map("n", "<leader>wo", "<C-w>o", opt)
 
 map("n", "<leader>k", ":WhichKey<CR>", opt) --which-key
 map("n", "<leader>;", ":Dashboard<CR>", opt) --welcome
@@ -46,15 +51,16 @@ map("t", "<C-h>", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<C-j>", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<C-k>", [[ <C-\><C-N><C-w>k ]], opt)
 map("t", "<C-l>", [[ <C-\><C-N><C-w>l ]], opt)
-
+--NOTE: 增量选择 nvim-treesitter 里面 
 -- magic search
 map("n", "/", "/\\v", { noremap = true, silent = false })
 map("v", "/", "/\\v", { noremap = true, silent = false })
 map("n", "<leader>h", ":let @/ = \"\"<cr>", { noremap = true, silent = true }) -- 取消选择内容
 map("v", "p", '"_dP', opt) -- 在visual 模式里粘贴不要复制
 -- visual模式下缩进代码
-map("v", "<", "<gv", opt)
-map("v", ">", ">gv", opt)
+map("v", "<c-[>", "<gv", opt)
+map("v", "<c-]>", ">gv", opt)
+map("v", "<Esc>", "v", opt)
 -- 上下移动选中文本
 map("v", "<M-j>", ":move '>+1<CR>gv-gv", opt)
 map("v", "<M-k>", ":move '<-2<CR>gv-gv", opt)
@@ -66,6 +72,7 @@ map("n", "<leader>so", ":Telescope oldfiles<CR>", opt)
 map("n", "<leader>sk", ":Telescope keymaps<CR>", opt)
 map("n", "<leader>sc", ":Telescope commands<CR>", opt)
 map("n", "<leader>sp", ":Telescope projects<CR>", opt)
+map("n", "<leader>ss", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt) --file tree
 
 map("n", "<leader>mm", ":TodoTelescope<CR>", opt) --todo
@@ -87,7 +94,6 @@ map("n", "K", "<cmd>Lspsaga hover_doc<cr>", opt)
 map("n", "<leader>la", "<cmd>Lspsaga code_action<CR>", opt)
 
 map("n", "<leader>lr", ":Telescope lsp_references<CR>", opt)
-map("n", "<leader>ls", ":Telescope lsp_document_symbols<CR>", opt)
 
 map("n", "<leader>lj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
 map("n", "<leader>lk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)

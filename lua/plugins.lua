@@ -7,7 +7,10 @@ packer.startup({
         --------------------- colorschemes --------------------
         -- tokyonight
         use("RRethy/nvim-base16")
-        ---other
+        --------------------- leap --------------------
+        use { 'ggandor/leap.nvim', config = function()
+            -- require('leap').add_default_mappings()
+        end }
         -----------------------文件树------------------
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
         -----------------------标签页-----------------
@@ -18,7 +21,15 @@ packer.startup({
         ----------------------搜索-------------------
         use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
         ----------------------启动页面-------------------
-        use("glepnir/dashboard-nvim")
+        use {
+            'glepnir/dashboard-nvim',
+            event = 'VimEnter',
+            config = function()
+                require('dashboard').setup {
+                }
+            end,
+            requires = { 'nvim-tree/nvim-web-devicons' }
+        }
         ----------------------项目-------------------
         use("ahmedkhalf/project.nvim")
         ---------------------高亮--------------------
@@ -33,13 +44,10 @@ packer.startup({
             "ray-x/lsp_signature.nvim" --函数参数提示加强
         }
         ---------------------补全引擎--------------------
+        use("hrsh7th/vim-vsnip")
         -- 补全引擎
         use("hrsh7th/nvim-cmp")
-        use("p00f/nvim-ts-rainbow")
-        -- snippet 引擎
-        use("hrsh7th/vim-vsnip")
         -- 补全源
-        use("hrsh7th/cmp-vsnip")
         use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
         use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
         use("hrsh7th/cmp-path") -- { name = 'path' }
@@ -76,14 +84,8 @@ packer.startup({
         })
         ----------------------lastplace-----------------
         use 'ethanholz/nvim-lastplace'
-        ----------------------lazygit-------------------
-        use({
-            "nvim-telescope/telescope.nvim",
-            requires = { { "nvim-lua/plenary.nvim" }}
-        })
         ----------------------diffview------------------
         use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-
     end,
     config = {
         display = {
