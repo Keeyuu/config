@@ -24,8 +24,7 @@ require("plugin-config.toggleterm")
 require("plugin-config.todo-comments")
 require("plugin-config.nvim-spectre")
 require("plugin-config.nvim-lastplace")
--- require("plugin-config.gitsigns") --没什么吊用感觉
---require("lsp.null-ls") 语言lsp自带的感觉就很好
+
 -- 我们希望进入 Normal 模式时自动切换为英文输入法，而进入到 Insert 模式时切换回之前输入时所用的输入法。
 local myAutoGroup = vim.api.nvim_create_augroup("myAutoGroup", { clear = true, })
 local autocmd = vim.api.nvim_create_autocmd
