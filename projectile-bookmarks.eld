@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/code/company/server/" "~/Library/Mobile Documents/com~apple~CloudDocs/note/doc/" "~/code/self/probation/probation/admin/" "~/code/company/probation/")
+("~/" "~/Downloads/TSCLIB.DLL-VC++-Example/" "~/.emacs.d/" "~/Library/Mobile Documents/com~apple~CloudDocs/note/doc/" "~/code/company/xutil/" "/opt/homebrew/")

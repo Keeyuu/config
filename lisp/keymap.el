@@ -1,63 +1,63 @@
 
-;;; package --- keymap
-;;; Commentary:
-;;; code:
-;; vim mode
-
-(global-set-key (kbd "C-p") 'universal-argument)
-(evil-define-key '(normal visual insert replace operator motion emacs) 'global (kbd "C-p") 'universal-argument)
-
-(global-set-key (kbd "C-u") 'evil-scroll-page-up)
-(global-set-key (kbd "C-d") 'evil-scroll-page-down)
-
-
-(define-key evil-normal-state-map (kbd "TAB") 'evil-jump-to-tag)
-
-(evil-define-key 'normal org-mode-map (kbd "TAB") 'org-cycle)
-
-(define-key evil-normal-state-map (kbd "/") 'swiper)
-(define-key evil-normal-state-map (kbd ":") 'counsel-M-x )
-;;-----f-----
-(define-key evil-normal-state-map (kbd "<leader>ff") 'counsel-find-file )
-(define-key evil-normal-state-map (kbd "<leader>fd") 'dired )
-;;-----m-----
-(define-key evil-normal-state-map (kbd "<leader>mj") 'counsel-bookmark )
-(define-key evil-normal-state-map (kbd "<leader>md") 'bookmark-delete )
-;;-----b-----
-(define-key evil-normal-state-map (kbd "<leader>b") 'ivy-switch-buffer)
-;;-----x-----
-(define-key evil-normal-state-map (kbd "<leader>xc") 'capitalize-word)
-(define-key evil-normal-state-map (kbd "<leader>xu") 'upcase-word)
-(define-key evil-normal-state-map (kbd "<leader>xl") 'downcase-word)
-;;-----j-----
-(global-set-key (kbd "<leader>jj") 'avy-goto-char-timer)
-(global-set-key (kbd "<leader>jl") 'goto-last-change)
-;;-----p-----
-(define-key evil-normal-state-map (kbd "<leader>p") 'projectile-command-map)
-;;-----l-----
-;;(define-key evil-normal-state-map (kbd "<leader>lj") 'projectile-find-tag)
-(define-key evil-normal-state-map (kbd "<leader>lf") 'lsp-format-buffer)
-(define-key evil-normal-state-map (kbd "<leader>lr") 'lsp-find-references)
-(define-key evil-normal-state-map (kbd "<leader>ls") 'lsp-ui-doc-toggle)
-;;-----w----
-(define-key evil-normal-state-map (kbd "<leader>wh") 'split-window-horizontally)
-(define-key evil-normal-state-map (kbd "<leader>wv") 'split-window-vertically)
-(define-key evil-normal-state-map (kbd "<leader>wq") 'kill-buffer-and-window)
-(define-key evil-normal-state-map (kbd "<leader>wk") 'kill-buffer)
-;;-----h----
-(define-key evil-normal-state-map (kbd "<leader>h") 'undo-tree-visualize)
-;;-----t----
-(define-key evil-normal-state-map (kbd "M-0") 'treemacs-select-window)
-(define-key evil-normal-state-map (kbd "<leader>tt") 'treemacs)
-(define-key evil-normal-state-map (kbd "<leader>tn") 'treemacs-project)
-;;-----g----
-(define-key evil-normal-state-map (kbd "<leader>gh") 'vc-annotate)
-;;-----r----
-(define-key evil-normal-state-map (kbd "<leader>rs") 'query-replace)
-(define-key evil-normal-state-map (kbd "<leader>rr") 'query-replace-regexp)
-;;-----r----
-(define-key evil-normal-state-map (kbd "<leader>al") 'org-agenda-list)
+(use-package undo-fu)
+(use-package drag-stuff)
+(use-package evil-surround)
+(use-package evil
+    :defer nil
+    :ensure t
+    :init
+    (setq evil-undo-system 'undo-fu)
+    :config
+    (evil-mode 1)
+    (evil-surround-mode 1)
+    (evil-set-leader 'normal (kbd "SPC") nil) 
+    (setcdr evil-insert-state-map nil)  ;关闭insert 模式键位
+    (evil-set-initial-state 'dashboard-mode 'insert);首页下默认insert
+    (define-key evil-insert-state-map [escape] 'evil-normal-state);esc 退出 insert模式
+    (define-key evil-normal-state-map (kbd ":") 'counsel-M-x)
+    (define-key evil-normal-state-map (kbd "/") 'swiper)
+    (define-key evil-normal-state-map (kbd "<leader>p") 'projectile-command-map);;项目相关前缀
+    ;lsp
+    (evil-define-key '(normal) 'global (kbd "TAB") 'lsp-bridge-find-def);跳转
+    (evil-define-key '(normal) 'global (kbd "S-<tab>") 'lsp-bridge-find-def-other-window);窗口跳转
+    (evil-define-key '(normal) 'global (kbd "K") 'lsp-bridge-popup-documentation);显示信息
+    (evil-define-key '(normal) 'global (kbd "<leader>lrn") 'lsp-bridge-rename);
+    (evil-define-key '(normal) 'global (kbd "<leader>lrr") 'lsp-bridge-find-references);
+    (evil-set-initial-state 'lsp-bridge-ref-mode 'insert);引用模式下默认insert
+    (evil-define-key '(normal) 'global (kbd "<leader>lj") 'lsp-bridge-diagnostic-jump-next);
+    (evil-define-key '(normal) 'global (kbd "<leader>lk") 'lsp-bridge-diagnostic-jump-prev);
+    (evil-define-key '(normal) 'global (kbd "<leader>ll") 'lsp-bridge-diagnostic-list);
+    (evil-define-key '(normal) 'global (kbd "<leader>lf") 'lsp-format-buffer);
+    (evil-define-key '(normal) 'global (kbd "<leader>la") 'lsp-bridge-code-action);
+    (evil-define-key '(normal) 'global (kbd "<leader>lc") 'counsel-flycheck);
+    ;;-----m-----
+    (define-key evil-normal-state-map (kbd "<leader>mj") 'counsel-bookmark )
+    (define-key evil-normal-state-map (kbd "<leader>md") 'bookmark-delete )
+    ;;-----j-----
+    (evil-define-key '(normal visual) 'global (kbd "<leader>j") 'avy-goto-char-timer);超级jump
+    ;;-----move-----
+    (evil-define-key '(normal visual) 'global (kbd "M-p") 'drag-stuff-up);向上移动行)
+    (evil-define-key '(normal visual) 'global (kbd "M-n") 'drag-stuff-down);向下移动行)
+    (evil-define-key '(normal visual) 'global (kbd "M-f") 'indent-rigidly-right);向下移动行)
+    (evil-define-key '(normal visual) 'global (kbd "M-b") 'indent-rigidly-left);向下移动行)
+    (evil-define-key '(normal visual) 'global (kbd "C-p") 'scroll-down-command);向下移动行)
+    (evil-define-key '(normal visual) 'global (kbd "C-n") 'scroll-up-command);向下移动行)
+    ;;-----s-----
+    (evil-define-key '(normal) 'global (kbd "<leader>sb") 'counsel-ibuffer);选buff
+    (evil-define-key '(normal) 'global (kbd "<leader>sr") 'counsel-buffer-or-recentf);选buff
+    (evil-define-key '(normal) 'global (kbd "<leader>ss") 'counsel-rg);选buff
+    (evil-define-key '(normal) 'global (kbd "<leader>sf") 'project-find-file);选buff
+    ;;(define-key evil-normal-state-map (kbd "<leader>lj") 'projectile-find-tag)
+)
 
 
-;;
-(provide 'keymap) ; 意为“导出本模块，名为 hello”。这样就可以在其它地方进行 require
+
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "C-r") 'swiper-isearch-backward)
+(global-set-key (kbd "s-/") 'comment-line);注释 默认M-;
+(global-set-key (kbd "M-;") 'comment-line);注释 默认M-;
+(global-set-key (kbd "C-x b") 'ivy-switch-buffer) ;选buff
+
+
+(provide 'keymap)

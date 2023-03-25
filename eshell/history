@@ -1,17 +1,2 @@
-ls 
-clear 
-lazygit 
-clear 
-ls 
-mkdir org
-ls 
-cd org/
-touch note.org
-ls 
-which e
-which et
-remote
-remote.mini
-go 
-clear 
-clear 
+j github
+git rev-parse --is-inside-work-tree
