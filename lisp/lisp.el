@@ -124,7 +124,7 @@
   (setq rm-blacklist
     (format "^ \\(%s\\)$"
       (mapconcat #'identity
-        '("Projectile.*" "company.*" "Google" "ivy-posframe" "橋"
+        '("Projectile.*" "company.*" "Google" "ivy-posframe" "橋" "super-save"
 	  "Undo-Tree" "counsel" "ivy" "yas" "WK" "hs" "Lens" "FlyC*" "ElDoc"
          )
          "\\|"

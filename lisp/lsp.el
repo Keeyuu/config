@@ -1,19 +1,20 @@
 (provide 'lsp)
 
-(use-package flycheck
-  :defer nil
-  :config
-  (setq truncate-lines t) ; 如果单行信息很长会自动换行
-  :hook
-  (prog-mode . flycheck-mode)
-)
+;; (use-package flycheck
+;;   :defer nil
+;;   :config
+;;   (setq truncate-lines t) ; 如果单行信息很长会自动换行
+;;   :hook
+;;   (prog-mode . flycheck-mode)
+;; )
 
-(use-package flycheck-rust
-    :config
-    (with-eval-after-load 'rust-mode (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
-)
+;; (use-package flycheck-rust
+;;     :config
+;;     (with-eval-after-load 'rust-mode (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+;; )
 ;-----------------------lsp-bridge------------------------------------
 (use-package go-mode)
+(use-package rust-mode)
 (use-package posframe)
 
 (use-package markdown-mode

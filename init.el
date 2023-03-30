@@ -25,6 +25,7 @@
 (package-initialize) 
 
 
+(add-to-list 'default-frame-alist '(fullscreen . fullboth));全屏
 
 (prefer-coding-system 'utf-8)
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -36,17 +37,28 @@
 (global-auto-revert-mode t)                  ; 当另一程序修改了文件时，让 Emacs 及时刷新 Buffer
 (delete-selection-mode t)                    ; 选中文本后输入文本会替换文本（更符合我们习惯了的其它编辑器的逻辑）
 (setq inhibit-startup-message t)             ; 关闭启动 Emacs 时的欢迎界面
-(setq make-backup-files nil)                 ; 关闭文件自动备份
+
+(setq make-backup-files nil)                 ; 关闭文件自动备份 和下面的区别就是命名格式不一样
+(auto-save-visited-mode 1)
+(setq auto-save-visited-file-name "~/.emacs.d/.back/") ;修改文件时自动保存备份
+;(auto-save-mode 1);内置的功能不是那么完善
+(use-package super-save
+  :ensure t
+  :defer nil
+  :config;失去焦点自动保存
+  (super-save-mode +1)
+)
+
 (add-hook 'prog-mode-hook #'hs-minor-mode)   ; 编程模式下，可以折叠代码块
 (global-display-line-numbers-mode 1)         ; 在 Window 显示行号
 (tool-bar-mode -1)                           ; （熟练后可选）关闭 Tool bar
 (when (display-graphic-p) (toggle-scroll-bar -1)) ; 图形界面时关闭滚动条
 
 (savehist-mode 1)                            ; （可选）打开 Buffer 历史记录保存
-(auto-save-mode 1)
 (setq display-line-numbers-type 'relative)   ; （可选）显示相对行号
-(add-to-list 'default-frame-alist '(width . 180))  ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
+(add-to-list 'default-frame-alist '(width . 180)) ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
 (add-to-list 'default-frame-alist '(height . 55)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
+
 
 (use-package exec-path-from-shell
   :config
@@ -57,8 +69,8 @@
   )
 )
 
+(require 'lisp);这个必须第一
 (require 'lsp)
-(require 'lisp)
 (require 'cmp)
 (require 'keymap)
 

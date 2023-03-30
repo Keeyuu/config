@@ -40,13 +40,19 @@
     (evil-define-key '(normal visual) 'global (kbd "M-n") 'drag-stuff-down);向下移动行)
     (evil-define-key '(normal visual) 'global (kbd "M-f") 'indent-rigidly-right);向下移动行)
     (evil-define-key '(normal visual) 'global (kbd "M-b") 'indent-rigidly-left);向下移动行)
-    (evil-define-key '(normal visual) 'global (kbd "C-p") 'scroll-down-command);向下移动行)
-    (evil-define-key '(normal visual) 'global (kbd "C-n") 'scroll-up-command);向下移动行)
+    (defun next-ten-lines()
+    "Move cursor to next 10 lines."
+    (interactive)
+    (next-line 10))
+    (defun previous-ten-lines()
+    "Move cursor to previous 10 lines."
+    (interactive)
+    (previous-line 10))
+    (evil-define-key '(normal visual) 'global (kbd "C-n") 'next-ten-lines);向下移动行)
+    (evil-define-key '(normal visual) 'global (kbd "C-p") 'previous-ten-lines);向上移动行)
     ;;-----s-----
-    (evil-define-key '(normal) 'global (kbd "<leader>sb") 'counsel-ibuffer);选buff
     (evil-define-key '(normal) 'global (kbd "<leader>sr") 'counsel-buffer-or-recentf);选buff
     (evil-define-key '(normal) 'global (kbd "<leader>ss") 'counsel-rg);选buff
-    (evil-define-key '(normal) 'global (kbd "<leader>sf") 'project-find-file);选buff
     ;;(define-key evil-normal-state-map (kbd "<leader>lj") 'projectile-find-tag)
 )
 
