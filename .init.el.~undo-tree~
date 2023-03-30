@@ -57,5 +57,33 @@
 " 0 1 (fontified t)) . 700)) nil (25637 20355 152478 0) 0 nil])
 ([nil nil ((699 . 700) 661) nil (25637 20355 152477 0) 0 nil])
 ([nil nil ((701 . 703) (#("凭" 0 1 (fontified t face font-lock-comment-face)) . -701) (undo-tree-id1 . -1) 702 (700 . 702) (#("q" 0 1 (fontified t face font-lock-comment-face)) . -700) (undo-tree-id2 . -1) (#("u" 0 1 (fontified t face font-lock-comment-face)) . -701) (undo-tree-id3 . -1) 702 (699 . 702)) nil (25637 20355 152475 0) 0 nil])
-([nil current ((#("幕" 0 1 (fontified t face font-lock-comment-face)) . -702) (undo-tree-id0 . -1) 703) nil (25637 20355 152468 0) 0 nil])
+([nil nil ((#("幕" 0 1 (fontified t face font-lock-comment-face)) . -702) (undo-tree-id0 . -1) 703) nil (25637 20355 152468 0) 0 nil])
+([nil nil ((2831 . 3070) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )" 0 239 (fontified nil)) . -2831) (2741 . 2830) (#("
+" 0 1 (fontified nil)) . -2741) (2660 . 2742) (#(" " 0 1 (fontified nil)) . 2660) (2394 . 2661) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '(\"4b287bfbd581ea819e5d7abe139db1fb5ba71ab945cec438c48722bea3ed6689\" default))
+ '(package-selected-packages '(go-mode exec-path-from-shell flycheck ivy use-package)))" 0 436 (fontified nil)) . -2394) (t 25637 20355 156878 612000)) nil (25637 21001 895040 0) 0 nil])
+([nil current ((2831 . 3070) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )" 0 239 (fontified nil)) . -2831) (2741 . 2830) (#("
+" 0 1 (fontified nil)) . -2741) (2660 . 2742) (#(" " 0 1 (fontified nil)) . 2660) (2394 . 2661) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '(\"4b287bfbd581ea819e5d7abe139db1fb5ba71ab945cec438c48722bea3ed6689\" default))
+ '(package-selected-packages '(go-mode exec-path-from-shell flycheck ivy use-package)))" 0 436 (fontified nil)) . -2394) (t 25637 21001 899003 733000)) nil (25637 25349 402811 0) 0 nil])
 nil

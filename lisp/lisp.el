@@ -151,3 +151,5 @@
 (use-package vterm)
 (add-hook 'vterm-mode-hook (lambda () (display-line-numbers-mode 0)))
 
+;; 类似于ranger
+(use-package ranger)

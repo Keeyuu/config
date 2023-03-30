@@ -1,5 +1,4 @@
 (provide 'lsp)
-
 ;; (use-package flycheck
 ;;   :defer nil
 ;;   :config
