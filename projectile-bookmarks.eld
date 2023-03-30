@@ -1,1 +1,1 @@
-("~/" "~/Downloads/TSCLIB.DLL-VC++-Example/" "~/.emacs.d/" "~/Library/Mobile Documents/com~apple~CloudDocs/note/doc/" "~/code/company/xutil/" "/opt/homebrew/")
+("~/code/company/ures/" "~/.emacs.d/" "~/" "~/code/self/new-tool/color/" "~/Library/Mobile Documents/com~apple~CloudDocs/note/doc/" "~/.cargo/registry/src/github.com-1ecc6299db9ec823/regex-1.7.3/" "~/code/self/tool/" "~/code/company/probation/" "~/Downloads/TSCLIB.DLL-VC++-Example/" "~/code/company/xutil/" "/opt/homebrew/" "~/code/self/web/")
