@@ -85,7 +85,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("4b287bfbd581ea819e5d7abe139db1fb5ba71ab945cec438c48722bea3ed6689" default))
- '(package-selected-packages '(go-mode exec-path-from-shell flycheck ivy use-package)))
+ '(package-selected-packages
+   '(org project which-key vterm rust-mode markdown-mode marginalia evil dash counsel amx go-mode exec-path-from-shell flycheck ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

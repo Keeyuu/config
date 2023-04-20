@@ -13,6 +13,7 @@
     (evil-set-leader 'normal (kbd "SPC") nil) 
     (setcdr evil-insert-state-map nil)  ;关闭insert 模式键位
     (evil-set-initial-state 'dashboard-mode 'insert);首页下默认insert
+    (evil-set-initial-state 'vterm-mode 'insert);首页下默认insert
     (define-key evil-insert-state-map [escape] 'evil-normal-state);esc 退出 insert模式
     (define-key evil-normal-state-map (kbd ":") 'counsel-M-x)
     (define-key evil-normal-state-map (kbd "/") 'swiper)
@@ -35,11 +36,19 @@
     (define-key evil-normal-state-map (kbd "<leader>md") 'bookmark-delete )
     ;;-----j-----
     (evil-define-key '(normal visual) 'global (kbd "<leader>j") 'avy-goto-char-timer);超级jump
+    ;;-----e-----
+    (evil-define-key '(normal visual) 'global (kbd "<leader>e") 'ranger);超级jump
     ;;-----move-----
     (evil-define-key '(normal visual) 'global (kbd "M-p") 'drag-stuff-up);向上移动行)
     (evil-define-key '(normal visual) 'global (kbd "M-n") 'drag-stuff-down);向下移动行)
     (evil-define-key '(normal visual) 'global (kbd "M-f") 'indent-rigidly-right);向下移动行)
     (evil-define-key '(normal visual) 'global (kbd "M-b") 'indent-rigidly-left);向下移动行)
+    ; org mod
+    (evil-define-key '(normal) 'org-mode-map (kbd "TAB") 'org-cycle);展开标签
+    (evil-define-key '(normal) 'org-mode-map (kbd "S-<tab>") 'org-shifttab);全部展开
+    (evil-define-key '(normal) 'org-mode-map (kbd "M-l") 'org-metaright);降级
+    (evil-define-key '(normal) 'org-mode-map (kbd "M-h") 'org-metaleft);升级
+
     (defun next-ten-lines()
     "Move cursor to next 10 lines."
     (interactive)

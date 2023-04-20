@@ -2,4 +2,9 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-()
+(("encode"
+ (filename . "~/code/company/ures/src/ures/handler/file_handler.go")
+ (front-context-string . "h, wtmPath, cryp")
+ (rear-context-string . "ileName, filePat")
+ (position . 12273))
+)

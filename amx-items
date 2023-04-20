@@ -1,26 +1,26 @@
 
 ;; ----- amx-history -----
 (
- ranger-go
- ranger
- restart-emacs
- dirvish
- dirvish-fd
- dired
+ lsp-bridge-restart-process
+ lsp-format-buffer
  vterm
+ goto-line
+ list-packages
+ restart-emacs
+ normal-mode
 )
 
 ;; ----- amx-data -----
 (
  (company-tabnine-install-binary . 1)
  (lsp-install-server . 2)
- (restart-emacs . 84)
- (save-buffer . 11)
+ (restart-emacs . 69)
+ (save-buffer . 10)
  (package-list-packages . 1)
  (evil-mode . 1)
  (package-autoremove . 5)
  (package-delete . 2)
- (list-packages . 4)
+ (list-packages . 5)
  (eshell . 2)
  (term . 1)
  (counsel-ag . 1)
@@ -31,10 +31,10 @@
  (counsel-recentf . 2)
  (drag-stuff-left . 1)
  (lsp-breadcrumb-go-to-symbol . 1)
- (lsp-format-buffer . 1)
+ (lsp-format-buffer . 2)
  (lsp-document-highlight . 1)
  (lsp-ivy-workspace-symbol . 2)
- (package-install . 4)
+ (package-install . 2)
  (lsp-bridge-mode . 3)
  (lsp-bridge-find-def . 3)
  (lsp-bridge-rename . 1)
@@ -46,14 +46,9 @@
  (lsp-bridge-find-impl-other-window . 1)
  (lsp-bridge-code-format . 1)
  (shell . 2)
- (normal-mode . 8)
- (ignore . 1)
- (vterm . 3)
- (lsp-bridge-restart-process . 3)
- (dired . 1)
- (dirvish-fd . 1)
- (dirvish . 4)
- (dirvish-quit . 2)
- (ranger . 3)
- (ranger-go . 1)
+ (lsp-bridge-restart-process . 5)
+ (upcase-word . 2)
+ (normal-mode . 1)
+ (goto-line . 1)
+ (vterm . 2)
 )
