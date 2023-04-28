@@ -3,8 +3,8 @@
 ;; (add-to-list 'load-path (expand-file-name "cmp" user-emacs-directory)) ; 设定源码加载路径
 
 
+;; (set-face-attribute 'default nil :font"Mono 13")
 (set-face-attribute 'default nil :font"MesloLGL Nerd Font Mono 13")
-
 
 
 (require 'package)
@@ -86,10 +86,12 @@
  '(custom-safe-themes
    '("4b287bfbd581ea819e5d7abe139db1fb5ba71ab945cec438c48722bea3ed6689" default))
  '(package-selected-packages
-   '(org project which-key vterm rust-mode markdown-mode marginalia evil dash counsel amx go-mode exec-path-from-shell flycheck ivy use-package)))
+   '(js2-mode json-reformat org project which-key vterm rust-mode markdown-mode marginalia evil dash counsel amx go-mode exec-path-from-shell flycheck ivy use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+

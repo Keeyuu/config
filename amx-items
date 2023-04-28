@@ -1,42 +1,42 @@
 
 ;; ----- amx-history -----
 (
- lsp-bridge-restart-process
- lsp-format-buffer
- vterm
- goto-line
- list-packages
  restart-emacs
- normal-mode
+ goto-last-change
+ counsel-fzf
+ lsp-bridge-code-format
+ lsp-format-buffer
+ js2-mode
+ package-install
 )
 
 ;; ----- amx-data -----
 (
  (company-tabnine-install-binary . 1)
  (lsp-install-server . 2)
- (restart-emacs . 69)
+ (restart-emacs . 134)
  (save-buffer . 10)
  (package-list-packages . 1)
  (evil-mode . 1)
  (package-autoremove . 5)
- (package-delete . 2)
- (list-packages . 5)
+ (package-delete . 5)
+ (list-packages . 3)
  (eshell . 2)
  (term . 1)
  (counsel-ag . 1)
- (counsel-fzf . 2)
+ (counsel-fzf . 11)
  (counsel-search . 2)
- (counsel-rg . 4)
+ (counsel-rg . 5)
  (imenu . 1)
  (counsel-recentf . 2)
  (drag-stuff-left . 1)
  (lsp-breadcrumb-go-to-symbol . 1)
- (lsp-format-buffer . 2)
+ (lsp-format-buffer . 15)
  (lsp-document-highlight . 1)
  (lsp-ivy-workspace-symbol . 2)
- (package-install . 2)
+ (package-install . 7)
  (lsp-bridge-mode . 3)
- (lsp-bridge-find-def . 3)
+ (lsp-bridge-find-def . 5)
  (lsp-bridge-rename . 1)
  (lsp-bridge-find-impl . 1)
  (go-mode . 3)
@@ -44,11 +44,34 @@
  (global-lsp-bridge-mode . 1)
  (lsp-bridge-code-action . 1)
  (lsp-bridge-find-impl-other-window . 1)
- (lsp-bridge-code-format . 1)
+ (lsp-bridge-code-format . 7)
  (shell . 2)
- (lsp-bridge-restart-process . 5)
- (upcase-word . 2)
- (normal-mode . 1)
- (goto-line . 1)
- (vterm . 2)
+ (lsp-bridge-restart-process . 10)
+ (sql-ms . 3)
+ (vterm . 9)
+ (package-reinstall . 3)
+ (vterm-module-compile . 1)
+ (describe-font . 2)
+ (goto-last-change . 10)
+ (describe-char . 7)
+ (lisp-mode . 2)
+ (emacs-lisp-mode . 3)
+ (prettify-symbols-mode . 15)
+ (describe-variable . 1)
+ (sgml-tag . 1)
+ (counsel-package . 4)
+ (js-react-redux-yasnippets-toggle-semicolon . 2)
+ (mhtml-mode . 3)
+ (javascript-mode . 2)
+ (html-mode . 1)
+ (js-jsx-mode . 3)
+ (js-jsx-enable . 6)
+ (js-jsx-indent-line . 1)
+ (js-mode . 5)
+ (java-mode . 1)
+ (rename-file . 1)
+ (json-mode . 2)
+ (json-reformat-region . 8)
+ (jsonc-mode . 1)
+ (js2-mode . 1)
 )

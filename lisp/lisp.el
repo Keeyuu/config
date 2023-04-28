@@ -153,3 +153,37 @@
 
 ;; 类似于ranger
 (use-package ranger)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
+
+
+
+
+
+(defun my/split-window-below-third ()
+  (interactive)
+  (split-window-below)
+  (balance-windows)
+  (enlarge-window (floor (* 0.3 (window-text-height)))))
+
+(global-set-key (kbd "C-x 2") 'my/split-window-below-third)
+;; (global-prettify-symbols-mode +1)
+;; ;; 符号替换
+;; (add-hook 'after-change-major-mode-hook
+;;           (lambda ()
+;;             (setq prettify-symbols-alist
+;;                   '(
+;; 		    ("!=" . ?≠)
+;; 		    ("!==" . ?≢)
+;; 		    ("===" . ?≡)
+;; 		    ("<=" . ?≤)
+;;                     (">=" . ?≥)
+;;                     ("->" . ?⇾)
+;;                     ("<-" . ?⇽)
+;;                     ("&&" . ?∧)
+;;                     ("||" . ?∨)
+;; 		    )
+;; 		  )
+;;             (prettify-symbols-mode)))
+

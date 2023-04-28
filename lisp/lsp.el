@@ -36,7 +36,7 @@
 (setq acm-enable-tabnine t) ;ai
 (setq lsp-bridge-enable-auto-format-code t);自动格式化
 (setq lsp-bridge-python-lsp-server 'pylsp);py lsp
-(setq lsp-bridge-python-command "/opt/homebrew/Caskroom/miniconda/base/bin/python3");py lsp
+;; (setq lsp-bridge-python-command "/opt/homebrew/Caskroom/miniconda/base/bin/python3");py lsp
 (setq lsp-bridge-enable-hover-diagnostic t);鼠标悬停
 ;-------------------------------------------------------
 ;; ;https://www.flycheck.org/en/latest/languages.html#flycheck-languages

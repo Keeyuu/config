@@ -2,7 +2,22 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("encode"
+(("saveImg"
+ (filename . "~/code/github/mm-wiki/app/controllers/image.go")
+ (front-context-string . "app.ImageAbsDir,")
+ (rear-context-string . "ntf(\"%s/%s/%s\", ")
+ (position . 1611))
+("marked.render"
+ (filename . "~/code/github/mm-wiki/release/static/plugins/editor.md/editormd.js")
+ (front-context-string . "	plantUrl = ret.")
+ (rear-context-string . "de == 1) {\n					")
+ (position . 85113))
+("jsonSuccess"
+ (filename . "~/code/github/mm-wiki/app/controllers/page.go")
+ (front-context-string . "jsonSuccess(\"ok\"")
+ (rear-context-string . "(res.Header)\n	p.")
+ (position . 15587))
+("encode"
  (filename . "~/code/company/ures/src/ures/handler/file_handler.go")
  (front-context-string . "h, wtmPath, cryp")
  (rear-context-string . "ileName, filePat")

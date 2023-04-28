@@ -28,7 +28,7 @@
     (evil-define-key '(normal) 'global (kbd "<leader>lj") 'lsp-bridge-diagnostic-jump-next);
     (evil-define-key '(normal) 'global (kbd "<leader>lk") 'lsp-bridge-diagnostic-jump-prev);
     (evil-define-key '(normal) 'global (kbd "<leader>ll") 'lsp-bridge-diagnostic-list);
-    (evil-define-key '(normal) 'global (kbd "<leader>lf") 'lsp-format-buffer);
+    (evil-define-key '(normal) 'global (kbd "<leader>lf") 'lsp-bridge-code-format);
     (evil-define-key '(normal) 'global (kbd "<leader>la") 'lsp-bridge-code-action);
     (evil-define-key '(normal) 'global (kbd "<leader>lc") 'counsel-flycheck);
     ;;-----m-----
