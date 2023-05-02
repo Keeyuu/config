@@ -15,11 +15,15 @@
 (use-package go-mode)
 (use-package rust-mode)
 (use-package posframe)
+(use-package js2-mode)
 
 (use-package markdown-mode
   :init (setq markdown-command "multimarkdown")
 )
 
+
+;(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 
 (add-to-list 'load-path "/Users/keeyu/code/github/lsp-bridge")
 ; 手动安装

@@ -60,8 +60,9 @@
     (evil-define-key '(normal visual) 'global (kbd "C-n") 'next-ten-lines);向下移动行)
     (evil-define-key '(normal visual) 'global (kbd "C-p") 'previous-ten-lines);向上移动行)
     ;;-----s-----
-    (evil-define-key '(normal) 'global (kbd "<leader>sr") 'counsel-buffer-or-recentf);选buff
-    (evil-define-key '(normal) 'global (kbd "<leader>ss") 'counsel-rg);选buff
+    (evil-define-key '(normal) 'global (kbd "<leader>sr") 'counsel-buffer-or-recentf)
+    (evil-define-key '(normal) 'global (kbd "<leader>ss") 'counsel-rg)
+    (evil-define-key '(normal) 'global (kbd "<leader>sf") 'counsel-fzf)
     ;;(define-key evil-normal-state-map (kbd "<leader>lj") 'projectile-find-tag)
 )
 

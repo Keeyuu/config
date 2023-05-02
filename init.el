@@ -25,7 +25,7 @@
 (package-initialize) 
 
 
-(add-to-list 'default-frame-alist '(fullscreen . fullboth));全屏
+;;(add-to-list 'default-frame-alist '(fullscreen . fullboth));全屏
 
 (prefer-coding-system 'utf-8)
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -56,8 +56,11 @@
 
 (savehist-mode 1)                            ; （可选）打开 Buffer 历史记录保存
 (setq display-line-numbers-type 'relative)   ; （可选）显示相对行号
-(add-to-list 'default-frame-alist '(width . 180)) ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
-(add-to-list 'default-frame-alist '(height . 55)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
+;(add-to-list 'default-frame-alist '(width . 100)) ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
+;(add-to-list 'default-frame-alist '(height . 35)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
+;(setq default-frame-alist '((width . 100) (height . 50) (left . 800)))
+(setq initial-frame-alist '((width . 100) (height . 40) (left . 650)))
+
 
 
 (use-package exec-path-from-shell

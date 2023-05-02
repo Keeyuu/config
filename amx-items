@@ -1,30 +1,30 @@
 
 ;; ----- amx-history -----
 (
- restart-emacs
- goto-last-change
- counsel-fzf
- lsp-bridge-code-format
- lsp-format-buffer
+ js-jsx-mode
+ js-jsx-enable
+ js2-minor-mode
  js2-mode
- package-install
+ js2-jsx-mode
+ js-mode
+ restart-emacs
 )
 
 ;; ----- amx-data -----
 (
  (company-tabnine-install-binary . 1)
  (lsp-install-server . 2)
- (restart-emacs . 134)
+ (restart-emacs . 146)
  (save-buffer . 10)
  (package-list-packages . 1)
  (evil-mode . 1)
  (package-autoremove . 5)
- (package-delete . 5)
+ (package-delete . 7)
  (list-packages . 3)
  (eshell . 2)
  (term . 1)
  (counsel-ag . 1)
- (counsel-fzf . 11)
+ (counsel-fzf . 15)
  (counsel-search . 2)
  (counsel-rg . 5)
  (imenu . 1)
@@ -34,7 +34,7 @@
  (lsp-format-buffer . 15)
  (lsp-document-highlight . 1)
  (lsp-ivy-workspace-symbol . 2)
- (package-install . 7)
+ (package-install . 8)
  (lsp-bridge-mode . 3)
  (lsp-bridge-find-def . 5)
  (lsp-bridge-rename . 1)
@@ -52,7 +52,7 @@
  (package-reinstall . 3)
  (vterm-module-compile . 1)
  (describe-font . 2)
- (goto-last-change . 10)
+ (goto-last-change . 11)
  (describe-char . 7)
  (lisp-mode . 2)
  (emacs-lisp-mode . 3)
@@ -64,14 +64,22 @@
  (mhtml-mode . 3)
  (javascript-mode . 2)
  (html-mode . 1)
- (js-jsx-mode . 3)
- (js-jsx-enable . 6)
+ (js-jsx-mode . 11)
+ (js-jsx-enable . 13)
  (js-jsx-indent-line . 1)
- (js-mode . 5)
+ (js-mode . 9)
  (java-mode . 1)
- (rename-file . 1)
+ (rename-file . 2)
  (json-mode . 2)
  (json-reformat-region . 8)
  (jsonc-mode . 1)
- (js2-mode . 1)
+ (js2-mode . 11)
+ (counsel-outline . 1)
+ (js2-jsx-mode . 5)
+ (js2-minor-mode . 8)
+ (css-mode . 1)
+ (css-menu . 1)
+ (less-css-mode . 1)
+ (scss-mode . 1)
+ (ranger-refresh . 1)
 )
