@@ -5,6 +5,8 @@ local opt = { noremap = true, silent = true }
 
 -- 插件快捷键
 local pluginKeys = {}
+
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -14,7 +16,7 @@ map("v", "g_", "$", opt)
 map("n", "$", "g_", opt)
 map("n", "g_", "$", opt)
 
--- 取消 s 回车重复上一次搜索 空格 tab 扩展选择太多的情况 ;往后选择 
+-- 取消 s 回车重复上一次搜索 空格 tab 扩展选择太多的情况 ;往后选择
 map("n", "s", "<Plug>(leap-forward-to)", opt)
 map("n", "S", "<Plug>(leap-backward-to)", opt)
 map("n", "t", "<Plug>(leap-forward-till)", opt) --和其他操作配合
@@ -26,7 +28,7 @@ map("n", "<leader>wh", ":sp<CR>", opt)
 map("n", "<leader>ww", "<C-w>c", opt)
 map("n", "<leader>wo", "<C-w>o", opt)
 
-map("n", "<leader>k", ":WhichKey<CR>", opt) --which-key
+map("n", "<leader>k", ":WhichKey<CR>", opt)  --which-key
 map("n", "<leader>;", ":Dashboard<CR>", opt) --welcome
 
 -- bufferline
@@ -51,12 +53,12 @@ map("t", "<C-h>", [[ <C-\><C-N><C-w>h ]], opt)
 map("t", "<C-j>", [[ <C-\><C-N><C-w>j ]], opt)
 map("t", "<C-k>", [[ <C-\><C-N><C-w>k ]], opt)
 map("t", "<C-l>", [[ <C-\><C-N><C-w>l ]], opt)
---NOTE: 增量选择 nvim-treesitter 里面 
+--NOTE: 增量选择 nvim-treesitter 里面
 -- magic search
-map("n", "/", "/\\v", { noremap = true, silent = false })
-map("v", "/", "/\\v", { noremap = true, silent = false })
+--map("n", "/", "/\\v", { noremap = true, silent = false })
+--map("v", "/", "/\\v", { noremap = true, silent = false })
 map("n", "<leader>h", ":let @/ = \"\"<cr>", { noremap = true, silent = true }) -- 取消选择内容
-map("v", "p", '"_dP', opt) -- 在visual 模式里粘贴不要复制
+map("v", "p", '"_dP', opt)                                                     -- 在visual 模式里粘贴不要复制
 -- visual模式下缩进代码
 map("v", "<c-[>", "<gv", opt)
 map("v", "<c-]>", ">gv", opt)
@@ -74,6 +76,7 @@ map("n", "<leader>sc", ":Telescope commands<CR>", opt)
 map("n", "<leader>sp", ":Telescope projects<CR>", opt)
 map("n", "<leader>ss", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt) --file tree
+
 
 map("n", "<leader>mm", ":TodoTelescope<CR>", opt) --todo
 pluginKeys.todo = function(todo)
@@ -98,7 +101,7 @@ map("n", "<leader>lr", ":Telescope lsp_references<CR>", opt)
 map("n", "<leader>lj", "<cmd>Lspsaga diagnostic_jump_next<cr>", opt)
 map("n", "<leader>lk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opt)
 
-map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+map("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opt)
 
 
 --git NOTE: git 使用说明 https://github.com/sindrets/diffview.nvim
@@ -119,11 +122,6 @@ map("n", "<leader>ro", "<cmd>lua require('spectre').show_options()<CR>", opt)
 map("n", "<leader>rR", "<cmd>lua require('spectre.actions').run_replace()<CR>", opt)
 
 
--- map("n", "<leader>mp", ":MarkdownPreview<CR>", opt)
--- map("n", "<leader>mcp", ":MarkdownPreviewStop<CR>", opt)
--- map("n", "<leader>mg", ":Glow<CR>", opt)
--- map("n", "<leader>mcg", ":Glow!<CR>", opt)
-
 
 pluginKeys.telescopeList = {
     i = {
@@ -142,45 +140,12 @@ pluginKeys.telescopeList = {
 }
 
 
---map("n", "", ":HopAnywhere<CR>", opt)
--- 列表快捷键
-pluginKeys.nvimTreeList = {
-    { key = { "o", "<2-LeftMouse>" }, action = "edit" },
-    { key = "<CR>",                   action = "edit" },
-    { key = "so",                     action = "system_open" },
-    -- v分屏打开文件
-    { key = "v",                      action = "vsplit" },
-    -- h分屏打开文件
-    { key = "h",                      action = "split" },
-    -- Ignore (node_modules)
-    { key = "i",                      action = "toggle_ignored" },
-    -- Hide (dotfiles)
-    { key = ".",                      action = "toggle_dotfiles" },
-    { key = "R",                      action = "refresh" },
-    -- 文件操作
-    { key = "a",                      action = "create" },
-    { key = "d",                      action = "remove" },
-    { key = "r",                      action = "rename" },
-    { key = "x",                      action = "cut" },
-    { key = "c",                      action = "copy" },
-    { key = "p",                      action = "paste" },
-    { key = "y",                      action = "copy_name" },
-    { key = "Y",                      action = "copy_path" },
-    { key = "gy",                     action = "copy_absolute_path" },
-    { key = "I",                      action = "toggle_file_info" },
-    { key = "n",                      action = "tabnew" },
-    -- 进入下一级
-    { key = { "]" },                  action = "cd" },
-    -- 进入上一级
-    { key = { "[" },                  action = "dir_up" },
-}
-
 -- 代码注释插件
 -- see ./lua/plugin-config/comment.lua
 pluginKeys.comment = {
     -- Normal 模式快捷键
     toggler = {
-        line = "gcc", -- 行注释
+        line = "gcc",  -- 行注释
         block = "gbc", -- 块注释
     },
     -- Visual 模式
@@ -217,7 +182,7 @@ pluginKeys.cmp = function(cmp)
         end, { "i", "s" }),
         -- 自定义代码段跳转到上一个参数
         ["<C-h>"] = cmp.mapping(function()
-            if vim.fn["vsnip#jumpable"]( -1) == 1 then
+            if vim.fn["vsnip#jumpable"](-1) == 1 then
                 feedkey("<Plug>(vsnip-jump-prev)", "")
             end
         end, { "i", "s" }),
@@ -241,7 +206,7 @@ pluginKeys.cmp = function(cmp)
         ["<S-Tab>"] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif vim.fn["vsnip#jumpable"]( -1) == 1 then
+            elseif vim.fn["vsnip#jumpable"](-1) == 1 then
                 feedkey("<Plug>(vsnip-jump-prev)", "")
             end
         end, { "i", "s" })

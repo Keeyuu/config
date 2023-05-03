@@ -21,15 +21,23 @@ packer.startup({
         ----------------------搜索-------------------
         use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
         ----------------------启动页面-------------------
+        -- use {
+        --     'glepnir/dashboard-nvim',
+        --     event = 'VimEnter',
+        --     config = function()
+        --         require('dashboard').setup {
+        --             shortcut_type='letter'
+        --         }
+        --     end,
+        --     requires = { 'nvim-tree/nvim-web-devicons' }
+        -- }
         use {
-            'glepnir/dashboard-nvim',
-            event = 'VimEnter',
-            config = function()
-                require('dashboard').setup {
-                }
-            end,
-            requires = { 'nvim-tree/nvim-web-devicons' }
-        }
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
+}
         ----------------------项目-------------------
         use("ahmedkhalf/project.nvim")
         ---------------------高亮--------------彩色括号------

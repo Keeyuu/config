@@ -1,5 +1,6 @@
 local vim = vim
 require("basic")
+
 require("keybindings")
 
 require("plugins")
@@ -25,15 +26,3 @@ require("plugin-config.todo-comments")
 require("plugin-config.nvim-spectre")
 require("plugin-config.nvim-lastplace")
 
--- 我们希望进入 Normal 模式时自动切换为英文输入法，而进入到 Insert 模式时切换回之前输入时所用的输入法。
-local myAutoGroup = vim.api.nvim_create_augroup("myAutoGroup", { clear = true, })
-local autocmd = vim.api.nvim_create_autocmd
--- 自动切换输入法
-autocmd("InsertLeave", {
-    group = myAutoGroup,
-    callback = require("utils.im-select").macInsertLeave,
-})
-autocmd("InsertEnter", {
-    group = myAutoGroup,
-    callback = require("utils.im-select").macInsertEnter,
-})

@@ -29,12 +29,11 @@ require("mason-lspconfig").setup({
         "taplo",
         "gopls",
         "cmake",
-        "sqls",
+        "sqlls",
         "vimls",
         "marksman",
         "clangd",
         "bufls",
-
     },
 })
 
@@ -56,7 +55,6 @@ local servers = {
     taplo = Default,
     gopls = Default,
     cmake = Default,
-    sqls = Default,
     vimls = Default,
     marksman = Default,
     clangd = Default,

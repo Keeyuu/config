@@ -11,7 +11,7 @@ if not ok then
 end
 
 install.command_extra_args = {
-    curl = { "--proxy", "127.0.0.1:7890" },
+    curl = { "--proxy", "127.0.0.1:7891" },
 }
 
 treesitter.setup({
