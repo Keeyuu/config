@@ -128,7 +128,6 @@ nvim_tree.setup({
         -- 自定义列表中快捷键
         mappings = {
             custom_only = false,
-            list = list_keys,
         },
         -- 不显示行数
         number = false,
@@ -150,7 +149,3 @@ nvim_tree.setup({
         cmd = 'open', -- mac 直接设置为 open
     },
 })
--- 自动关闭
-vim.cmd([[
- autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-]])

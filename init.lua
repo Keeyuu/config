@@ -2,7 +2,6 @@ local vim = vim
 require("basic")
 
 require("keybindings")
-
 require("plugins")
 require("colorscheme")
 require("plugin-config.nvim-tree")
@@ -25,4 +24,5 @@ require("plugin-config.toggleterm")
 require("plugin-config.todo-comments")
 require("plugin-config.nvim-spectre")
 require("plugin-config.nvim-lastplace")
+require("plugin-config.undo-tree")
 

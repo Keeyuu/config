@@ -77,6 +77,9 @@ packer.startup({
         use 'ethanholz/nvim-lastplace'
         ----------------------diffview------------------
         use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+        
+        ----------------------undotree------------------
+        use {'mbbill/undotree'}
     end,
     config = {
         display = {
