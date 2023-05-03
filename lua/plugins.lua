@@ -29,7 +29,7 @@ packer.startup({
         ----------------------项目-------------------
         use("ahmedkhalf/project.nvim")
         ---------------------高亮--------------彩色括号------
-        use({ "nvim-treesitter/nvim-treesitter", requires = { 'p00f/nvim-ts-rainbow' }, run = ":TSUpdate" })
+        use({ "nvim-treesitter/nvim-treesitter", requires = { 'p00f/nvim-ts-rainbow','windwp/nvim-ts-autotag' }, run = ":TSUpdate" })
         ---------------------注释--------------------
         use("numToStr/Comment.nvim")
         ---------------------mason--------------------
