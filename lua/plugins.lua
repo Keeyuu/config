@@ -29,7 +29,11 @@ packer.startup({
         ----------------------项目-------------------
         use("ahmedkhalf/project.nvim")
         ---------------------高亮--------------彩色括号------
-        use({ "nvim-treesitter/nvim-treesitter", requires = { 'p00f/nvim-ts-rainbow','windwp/nvim-ts-autotag' }, run = ":TSUpdate" })
+        use({
+            "nvim-treesitter/nvim-treesitter",
+            requires = { 'p00f/nvim-ts-rainbow', 'windwp/nvim-ts-autotag' },
+            run = ":TSUpdate"
+        })
         ---------------------注释--------------------
         use("numToStr/Comment.nvim")
         ---------------------mason--------------------
@@ -81,7 +85,14 @@ packer.startup({
         ----------------------undotree------------------
         use { 'mbbill/undotree' }
         ----------------------autosave------------------
-        use { 'Pocco81/AutoSave.nvim'}
+        use { 'Pocco81/AutoSave.nvim' }
+        ----------------------ranger------------------
+        use {
+            "kelly-lin/ranger.nvim",
+            config = function()
+                require("ranger-nvim").setup({ replace_netrw = true })
+            end,
+        }
     end,
     config = {
         display = {
@@ -102,12 +113,12 @@ packer.startup({
 
 
 -- 每次保存 plugins.lua 自动安装插件
-pcall(
-    vim.cmd,
-    [[
-    augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
-  ]]
-)
+-- pcall(
+--     vim.cmd,
+--     [[
+--     augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--     augroup end
+--   ]]
+-- )
