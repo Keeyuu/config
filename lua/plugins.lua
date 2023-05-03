@@ -9,7 +9,6 @@ packer.startup({
         use("RRethy/nvim-base16")
         --------------------- leap --------------------
         use { 'ggandor/leap.nvim', config = function()
-            -- require('leap').add_default_mappings()
         end }
         -----------------------文件树------------------
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
@@ -20,24 +19,13 @@ packer.startup({
         use("arkav/lualine-lsp-progress")
         ----------------------搜索-------------------
         use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
-        ----------------------启动页面-------------------
-        -- use {
-        --     'glepnir/dashboard-nvim',
-        --     event = 'VimEnter',
-        --     config = function()
-        --         require('dashboard').setup {
-        --             shortcut_type='letter'
-        --         }
-        --     end,
-        --     requires = { 'nvim-tree/nvim-web-devicons' }
-        -- }
         use {
-    'goolord/alpha-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
-}
+            'goolord/alpha-nvim',
+            requires = { 'nvim-tree/nvim-web-devicons' },
+            config = function()
+                require 'alpha'.setup(require 'alpha.themes.startify'.config)
+            end
+        }
         ----------------------项目-------------------
         use("ahmedkhalf/project.nvim")
         ---------------------高亮--------------彩色括号------
@@ -57,9 +45,9 @@ packer.startup({
         use("hrsh7th/nvim-cmp")
         -- 补全源
         use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
-        use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
-        use("hrsh7th/cmp-path") -- { name = 'path' }
-        use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+        use("hrsh7th/cmp-buffer")   -- { name = 'buffer' },
+        use("hrsh7th/cmp-path")     -- { name = 'path' }
+        use("hrsh7th/cmp-cmdline")  -- { name = 'cmdline' }
         use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
         -- ui 补全图标显示
         use("onsails/lspkind-nvim")
@@ -85,11 +73,6 @@ packer.startup({
             "windwp/nvim-spectre",
             requires = "nvim-lua/plenary.nvim"
         }
-        ----------------------md------------------
-        use({
-            "iamcco/markdown-preview.nvim",
-            run = function() vim.fn["mkdp#util#install"]() end,
-        })
         ----------------------lastplace-----------------
         use 'ethanholz/nvim-lastplace'
         ----------------------diffview------------------
