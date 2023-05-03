@@ -29,7 +29,7 @@ map("n", "<leader>ww", "<C-w>c", opt)
 map("n", "<leader>wo", "<C-w>o", opt)
 
 map("n", "<leader>k", ":WhichKey<CR>", opt)  --which-key
-map("n", "<leader>;", ":Dashboard<CR>", opt) --welcome
+map("n", "<leader>;", ":Alpha<CR>", opt) --welcome
 
 -- bufferline
 map("n", "<M-h>", ":BufferLineCyclePrev<CR>", opt)
@@ -76,10 +76,10 @@ map("n", "<leader>sk", ":Telescope keymaps<CR>", opt)
 map("n", "<leader>sc", ":Telescope commands<CR>", opt)
 map("n", "<leader>sp", ":Telescope projects<CR>", opt)
 map("n", "<leader>ss", ":Telescope lsp_document_symbols<CR>", opt)
+map("n", "<leader>sm", ":TodoTelescope<CR>", opt) --todo
 map("n", "<leader>e", ":NvimTreeToggle<CR>", opt) --file tree
 
 
-map("n", "<leader>mm", ":TodoTelescope<CR>", opt) --todo
 pluginKeys.todo = function(todo)
     vim.keymap.set("n", "<leader>mj", function()
         todo.jump_next()
