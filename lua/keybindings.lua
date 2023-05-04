@@ -77,9 +77,9 @@ map("n", "<leader>sc", ":Telescope commands<CR>", opt)
 map("n", "<leader>sp", ":Telescope projects<CR>", opt)
 map("n", "<leader>ss", ":Telescope lsp_document_symbols<CR>", opt)
 map("n", "<leader>sm", ":TodoTelescope<CR>", opt)  --todo
-map("n", "<leader>ee", ":NvimTreeToggle<CR>", opt) --file tree
+--map("n", "<leader>ee", ":NvimTreeToggle<CR>", opt) --file tree
 
-vim.keymap.set("n", "<leader>ef", function()
+vim.keymap.set("n", "<leader>e", function()
     require("ranger-nvim").open(true)
 end)
 
